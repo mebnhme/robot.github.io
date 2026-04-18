@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md Nyem Hasan Bhuiyan — Researcher & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0a1628;
+  --blue: #1a3a6b;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --white: #ffffff;
+  --off: #f8fafc;
+  --gray: #64748b;
+  --light: #e2e8f0;
+  --text: #1e293b;
+  --serif: 'DM Serif Display', serif;
+  --sans: 'DM Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--white);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 60px;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light);
+}
+.nav-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  color: var(--navy);
+}
+.nav-links { display: flex; gap: 28px; }
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.3px;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 60px;
+}
+.hero-left {
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-left::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  border: 60px solid rgba(37,99,235,0.15);
+}
+.hero-left::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  border: 40px solid rgba(37,99,235,0.1);
+}
+.avatar-wrap {
+  position: relative;
+  margin-bottom: 28px;
+}
+.avatar {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 4px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 52px;
+  color: var(--white);
+  position: relative; z-index: 1;
+}
+.avatar-ring {
+  position: absolute; top: -8px; left: -8px;
+  width: 176px; height: 176px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255,255,255,0.2);
+  animation: spin 20s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.open-badge {
+  background: rgba(37,99,235,0.25);
+  border: 1px solid rgba(37,99,235,0.4);
+  color: #93c5fd;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.hero-contact {
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  text-align: center;
+  line-height: 2;
+}
+.hero-contact a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+.social-row {
+  display: flex; gap: 10px; margin-top: 20px;
+}
+.social-btn {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.social-btn:hover { background: rgba(37,99,235,0.3); border-color: rgba(37,99,235,0.5); }
+.social-btn svg { width: 15px; height: 15px; fill: rgba(255,255,255,0.7); }
+
+.hero-right {
+  padding: 72px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--white);
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 1.15;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.hero-sub {
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 24px;
+  font-weight: 300;
+}
+.hero-bio {
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  max-width: 440px;
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.tag {
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--accent-light);
+  color: #1d4ed8;
+  font-weight: 500;
+}
+.btn-row { display: flex; gap: 12px; }
+.btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+}
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--light);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* SECTIONS */
+section { padding: 80px 48px; }
+section:nth-child(even) { background: var(--off); }
+
+.section-header { margin-bottom: 48px; }
+.section-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+/* RESEARCH */
+.collab-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.collab-card {
+  background: var(--white);
+  border: 1px solid var(--light);
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.collab-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--accent);
+}
+.collab-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.collab-flag {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.collab-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.collab-uni { font-size: 12px; color: var(--gray); margin-bottom: 10px; }
+.collab-topic { font-size: 12px; color: var(--gray); line-height: 1.6; }
+
+/* PUBLICATIONS */
+.pub-list { display: flex; flex-direction: column; gap: 16px; }
+.pub-card {
+  background: var(--white);
+  border: 1px solid var(--light);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 16px;
+  align-items: start;
+  transition: box-shadow 0.2s;
+}
+.pub-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.pub-year {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--accent);
+  line-height: 1;
+  padding-top: 2px;
+}
+.pub-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.pub-venue { font-size: 12px; color: var(--gray); }
+.pub-status {
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.status-review { background: #fef3c7; color: #92400e; }
+.status-progress { background: #dcfce7; color: #166534; }
+
+/* INTERESTS */
+.interests-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.interest-card {
+  background: var(--white);
+  border: 1px solid var(--light);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.interest-card:hover { border-color: var(--accent); background: var(--accent-light); }
+.interest-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+}
+.interest-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+.interest-name { font-size: 12px; font-weight: 500; color: var(--navy); }
+
+/* SKILLS */
+.skills-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.skill-group-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 14px; }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-pill {
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--light);
+  color: var(--gray);
+  background: var(--white);
+  transition: all 0.2s;
+}
+.skill-pill:hover { border-color: var(--accent); color: var(--accent); }
+.skill-pill.core { background: var(--accent); color: var(--white); border-color: var(--accent); }
+
+/* EXPERIENCE */
+.exp-timeline { position: relative; padding-left: 24px; }
+.exp-timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 6px; bottom: 6px;
+  width: 1px;
+  background: var(--light);
+}
+.exp-item { position: relative; padding-bottom: 32px; }
+.exp-item:last-child { padding-bottom: 0; }
+.exp-dot {
+  position: absolute; left: -28px; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.exp-period { font-size: 11px; color: var(--accent); font-weight: 500; margin-bottom: 4px; letter-spacing: 0.5px; }
+.exp-role { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.exp-company { font-size: 13px; color: var(--gray); margin-bottom: 8px; }
+.exp-desc { font-size: 13px; color: var(--gray); line-height: 1.7; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.contact-intro {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.contact-item {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px;
+}
+.contact-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.contact-text { font-size: 13px; color: var(--gray); }
+.contact-text a { color: var(--accent); text-decoration: none; }
+.contact-form-area {
+  background: var(--navy);
+  border-radius: 16px;
+  padding: 32px;
+}
+.contact-form-area .form-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 6px; display: block; }
+.contact-form-area input,
+.contact-form-area textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: white;
+  font-family: var(--sans);
+  font-size: 13px;
+  margin-bottom: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form-area input:focus,
+.contact-form-area textarea:focus { border-color: rgba(37,99,235,0.6); }
+.contact-form-area textarea { height: 100px; resize: none; }
+.contact-form-area .btn-send {
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form-area .btn-send:hover { background: #1d4ed8; }
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-name { font-family: var(--serif); font-size: 15px; color: rgba(255,255,255,0.7); }
+.footer-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { min-height: 320px; }
+  .collab-grid { grid-template-columns: 1fr; }
+  .interests-grid { grid-template-columns: repeat(2,1fr); }
+  .skills-section { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  section { padding: 60px 24px; }
+  .hero-right { padding: 40px 24px; }
+  .hero-name { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Nyem Hasan</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="about">
+  <div class="hero-left">
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar">N</div>
+    </div>
+    <div class="open-badge">Open to MS / PhD Positions</div>
+    <div class="hero-contact">
+      Dhaka, Bangladesh<br/>
+      <a href="mailto:nyem.hasan@live-security.net">nyem.hasan@live-security.net</a><br/>
+      +880 1824039747
+    </div>
+    <div class="social-row">
+      <!-- LinkedIn -->
+      <div class="social-btn" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <!-- GitHub -->
+      <div class="social-btn" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      </div>
+      <!-- ORCID -->
+      <div class="social-btn" title="ORCID">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path fill="none" stroke-width="2.5" d="M8 7v10M12 7c4 0 6 2 6 5s-2 5-6 5h-4" style="stroke:rgba(255,255,255,0.7);fill:none;"/></svg>
+      </div>
+      <!-- Email -->
+      <div class="social-btn" title="Email">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="eyebrow">Researcher · Developer · ML Engineer</div>
+    <h1 class="hero-name">Md Nyem Hasan<br/>Bhuiyan</h1>
+    <div class="hero-sub">B.Sc. in Computer Science &amp; Engineering · Dhaka International University, 2018</div>
+    <p class="hero-bio">
+      I am a researcher and developer with active international collaborations in Graph Neural Network security and Healthcare AI. I bring hands-on experience building intelligent systems — from federated learning frameworks to transformer-based NLP models — and I am eager to contribute to impactful PhD or MS research programs.
+    </p>
+    <div class="tag-row">
+      <span class="tag">Machine Learning</span>
+      <span class="tag">GNN Security</span>
+      <span class="tag">Healthcare AI</span>
+      <span class="tag">Federated Learning</span>
+      <span class="tag">NLP</span>
+      <span class="tag">Computer Vision</span>
+    </div>
+    <div class="btn-row">
+      <a href="#" class="btn btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        Download CV
+      </a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-header fade-up">
+    <div class="section-label">International Collaborations</div>
+    <div class="section-title">Research Experience</div>
+  </div>
+  <div class="collab-grid">
+    <div class="collab-card fade-up">
+      <div class="collab-flag">Florida State University · USA</div>
+      <div class="collab-name">Prof. Yushun Dong</div>
+      <div class="collab-uni">Research Collaborator</div>
+      <div class="collab-topic">Graph Neural Network (GNN) Security — model fingerprinting techniques for ownership verification and resilience against adversarial attacks such as pruning and retraining, evaluated on Cora, CiteSeer, and PubMed benchmarks.</div>
+    </div>
+    <div class="collab-card fade-up">
+      <div class="collab-flag">University of Central Punjab · Pakistan</div>
+      <div class="collab-name">Dr Asad Abbas</div>
+      <div class="collab-uni">Research Collaborator</div>
+      <div class="collab-topic">Healthcare AI and Medical Machine Learning — federated learning for Alzheimer's disease and kidney disease risk prediction, generative deep learning for personalized cancer immunotherapy, and transformer models for Bengali cyberbullying detection.</div>
+    </div>
+    <div class="collab-card fade-up">
+      <div class="collab-flag">Southeast University · Bangladesh</div>
+      <div class="collab-name">Asst. Prof. Khandaker Mohammad Mohi Uddin</div>
+      <div class="collab-uni">Research Assistant</div>
+      <div class="collab-topic">Feature optimisation, model evaluation, and data analytics. Contributed to multiple research projects spanning machine learning and intelligent systems.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header fade-up">
+    <div class="section-label">Scholarly Work</div>
+    <div class="section-title">Publications</div>
+  </div>
+  <div class="pub-list">
+    <div class="pub-card fade-up">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">GNN Fingerprinting for Model Ownership Verification Against Adversarial Attacks</div>
+        <div class="pub-venue">In collaboration with Prof. Yushun Dong, Florida State University · Cora, CiteSeer, PubMed benchmarks</div>
+      </div>
+      <span class="pub-status status-review">Under Review</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">Federated Learning Framework for Alzheimer's Disease Risk Prediction</div>
+        <div class="pub-venue">In collaboration with Dr Asad Abbas, University of Central Punjab · Healthcare AI</div>
+      </div>
+      <span class="pub-status status-progress">In Progress</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-year">2024</div>
+      <div>
+        <div class="pub-title">Transformer Model Optimisation for Bengali Cyberbullying Detection</div>
+        <div class="pub-venue">NLP · Bengali Language Processing · Medical &amp; Social AI</div>
+      </div>
+      <span class="pub-status status-progress">In Progress</span>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section>
+  <div class="section-header fade-up">
+    <div class="section-label">Focus Areas</div>
+    <div class="section-title">Research Interests</div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <div class="interest-name">Machine Learning</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      </div>
+      <div class="interest-name">Deep Learning</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="interest-name">GNN Security</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="interest-name">Healthcare AI</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="interest-name">NLP</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="interest-name">Computer Vision</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+      </div>
+      <div class="interest-name">IoT &amp; Network Security</div>
+    </div>
+    <div class="interest-card fade-up">
+      <div class="interest-icon">
+        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="interest-name">Data Science</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-up">
+    <div class="section-label">Technical Expertise</div>
+    <div class="section-title">Skills</div>
+  </div>
+  <div class="skills-section">
+    <div class="fade-up">
+      <div class="skill-group-title">Programming &amp; Frameworks</div>
+      <div class="skill-pills">
+        <span class="skill-pill core">Python</span>
+        <span class="skill-pill core">PyTorch</span>
+        <span class="skill-pill core">TensorFlow</span>
+        <span class="skill-pill">Scikit-learn</span>
+        <span class="skill-pill">Keras</span>
+        <span class="skill-pill">NumPy</span>
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">Git</span>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="skill-group-title">Research &amp; AI Domains</div>
+      <div class="skill-pills">
+        <span class="skill-pill core">Graph Neural Networks</span>
+        <span class="skill-pill core">Federated Learning</span>
+        <span class="skill-pill">Transformer Models</span>
+        <span class="skill-pill">Computer Vision</span>
+        <span class="skill-pill">NLP</span>
+        <span class="skill-pill">Model Security</span>
+        <span class="skill-pill">Data Analytics</span>
+        <span class="skill-pill">Feature Engineering</span>
+        <span class="skill-pill">Network Security</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-up">
+    <div class="section-label">Career</div>
+    <div class="section-title">Experience</div>
+  </div>
+  <div class="exp-timeline">
+    <div class="exp-item fade-up">
+      <div class="exp-dot"></div>
+      <div class="exp-period">2023 — Present</div>
+      <div class="exp-role">Senior Support Engineer</div>
+      <div class="exp-company">Live Security System · Dhaka, Bangladesh</div>
+      <div class="exp-desc">Leading technical support operations while pursuing parallel research collaborations in ML and AI. Applying data-driven approaches to security systems.</div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-dot"></div>
+      <div class="exp-period">2020 — 2023</div>
+      <div class="exp-role">Junior Software Developer</div>
+      <div class="exp-company">Mega-Soft Solution BD · Dhaka, Bangladesh</div>
+      <div class="exp-desc">Developed software solutions for clients, working across the full stack and contributing to product development cycles.</div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-dot"></div>
+      <div class="exp-period">2014 — 2018</div>
+      <div class="exp-role">B.Sc. in Computer Science &amp; Engineering</div>
+      <div class="exp-company">Dhaka International University · Dhaka, Bangladesh</div>
+      <div class="exp-desc">Graduated with a strong foundation in algorithms, data structures, and software engineering.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header fade-up">
+    <div class="section-label">Let's Connect</div>
+    <div class="section-title">Contact</div>
+  </div>
+  <div class="contact-grid">
+    <div class="fade-up">
+      <p class="contact-intro">
+        I am actively seeking MS and PhD opportunities in machine learning, AI security, and healthcare AI. If you are a faculty member or recruiter, I would love to connect.
+      </p>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="contact-text"><a href="mailto:nyem.hasan@live-security.net">nyem.hasan@live-security.net</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+        </div>
+        <div class="contact-text">+880 1824039747</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="contact-text">Dhaka, Bangladesh — 1205</div>
+      </div>
+    </div>
+    <div class="contact-form-area fade-up">
+      <label class="form-label">Your Name</label>
+      <input type="text" placeholder="Prof. Jane Smith"/>
+      <label class="form-label">Email</label>
+      <input type="email" placeholder="jane@university.edu"/>
+      <label class="form-label">Message</label>
+      <textarea placeholder="I'd like to discuss a potential PhD position..."></textarea>
+      <button class="btn-send">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Md Nyem Hasan Bhuiyan</span>
+  <span class="footer-note">Actively seeking MS / PhD opportunities worldwide · 2025</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
