@@ -6,11 +6,10 @@
 <title>Md Nyem Hasan Bhuiyan — Researcher & Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 :root {
   --navy: #0a1628;
-  --blue: #1a3a6b;
   --accent: #2563eb;
   --accent-light: #dbeafe;
   --white: #ffffff;
@@ -21,522 +20,308 @@
   --serif: 'DM Serif Display', serif;
   --sans: 'DM Sans', sans-serif;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
+body { font-family: var(--sans); color: var(--text); background: var(--white); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
 
-body {
-  font-family: var(--sans);
-  color: var(--text);
-  background: var(--white);
-  font-size: 15px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  height: 60px;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--light);
-}
-.nav-name {
-  font-family: var(--serif);
-  font-size: 17px;
-  color: var(--navy);
-}
-.nav-links { display: flex; gap: 28px; }
-.nav-links a {
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--gray);
-  text-decoration: none;
-  transition: color 0.2s;
-  letter-spacing: 0.3px;
-}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 58px; background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid var(--light); }
+.nav-name { font-family: var(--serif); font-size: 16px; color: var(--navy); }
+.nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.nav-links a { font-size: 12px; color: var(--gray); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
+.hamburger { display: none; flex-direction: column; gap: 4px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { width: 20px; height: 2px; background: var(--navy); border-radius: 2px; }
 
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 60px;
-}
-.hero-left {
-  background: var(--navy);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 48px;
-  position: relative;
-  overflow: hidden;
-}
-.hero-left::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 320px; height: 320px;
-  border-radius: 50%;
-  border: 60px solid rgba(37,99,235,0.15);
-}
-.hero-left::after {
-  content: '';
-  position: absolute;
-  bottom: -60px; left: -60px;
-  width: 220px; height: 220px;
-  border-radius: 50%;
-  border: 40px solid rgba(37,99,235,0.1);
-}
-.avatar-wrap {
-  position: relative;
-  margin-bottom: 28px;
-}
-.avatar {
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 4px solid rgba(255,255,255,0.15);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif);
-  font-size: 52px;
-  color: var(--white);
-  position: relative; z-index: 1;
-}
-.avatar-ring {
-  position: absolute; top: -8px; left: -8px;
-  width: 176px; height: 176px;
-  border-radius: 50%;
-  border: 2px dashed rgba(255,255,255,0.2);
-  animation: spin 20s linear infinite;
-}
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; margin-top: 58px; }
+.hero-left { background: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; position: relative; overflow: hidden; }
+.hero-left::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; border: 60px solid rgba(37,99,235,0.12); }
+.hero-left::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; border-radius: 50%; border: 40px solid rgba(37,99,235,0.08); }
+.avatar-wrap { position: relative; margin-bottom: 24px; }
+.avatar { width: 150px; height: 150px; border-radius: 50%; background: var(--accent); border: 4px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 48px; color: var(--white); position: relative; z-index: 1; overflow: hidden; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; display: none; }
+.avatar img.loaded { display: block; }
+.avatar-ring { position: absolute; top: -8px; left: -8px; width: 166px; height: 166px; border-radius: 50%; border: 2px dashed rgba(255,255,255,0.18); animation: spin 20s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-.open-badge {
-  background: rgba(37,99,235,0.25);
-  border: 1px solid rgba(37,99,235,0.4);
-  color: #93c5fd;
-  font-size: 11px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
-.hero-contact {
-  color: rgba(255,255,255,0.5);
-  font-size: 12px;
-  text-align: center;
-  line-height: 2;
-}
-.hero-contact a {
-  color: #93c5fd;
-  text-decoration: none;
-}
-.social-row {
-  display: flex; gap: 10px; margin-top: 20px;
-}
-.social-btn {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.05);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-}
-.social-btn:hover { background: rgba(37,99,235,0.3); border-color: rgba(37,99,235,0.5); }
-.social-btn svg { width: 15px; height: 15px; fill: rgba(255,255,255,0.7); }
+.open-badge { background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.35); color: #93c5fd; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 18px; }
+.hero-contact { color: rgba(255,255,255,0.45); font-size: 12px; text-align: center; line-height: 2.2; }
+.hero-contact a { color: #93c5fd; text-decoration: none; }
+.social-row { display: flex; gap: 10px; margin-top: 18px; }
+.social-btn { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s; }
+.social-btn:hover { background: rgba(37,99,235,0.25); }
+.social-btn svg { width: 14px; height: 14px; fill: none; stroke: rgba(255,255,255,0.65); stroke-width: 2; }
 
-.hero-right {
-  padding: 72px 56px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: var(--white);
-}
-.eyebrow {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-.hero-name {
-  font-family: var(--serif);
-  font-size: 44px;
-  line-height: 1.15;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.hero-sub {
-  font-size: 16px;
-  color: var(--gray);
-  margin-bottom: 24px;
-  font-weight: 300;
-}
-.hero-bio {
-  font-size: 14px;
-  color: var(--gray);
-  line-height: 1.8;
-  margin-bottom: 28px;
-  max-width: 440px;
-}
-.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
-.tag {
-  font-size: 11px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: var(--accent-light);
-  color: #1d4ed8;
-  font-weight: 500;
-}
-.btn-row { display: flex; gap: 12px; }
-.btn {
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 11px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s;
-  display: inline-flex; align-items: center; gap: 6px;
-}
-.btn-primary {
-  background: var(--accent);
-  color: var(--white);
-  border: none;
-}
-.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
-.btn-outline {
-  background: transparent;
-  color: var(--navy);
-  border: 1px solid var(--light);
-}
+.hero-right { padding: 64px 52px; display: flex; flex-direction: column; justify-content: center; }
+.eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 10px; }
+.hero-name { font-family: var(--serif); font-size: 40px; line-height: 1.12; color: var(--navy); margin-bottom: 8px; }
+.hero-sub { font-size: 13px; color: var(--gray); margin-bottom: 4px; font-weight: 300; }
+.hero-cgpa { font-size: 12px; color: var(--accent); font-weight: 500; margin-bottom: 18px; }
+.hero-bio { font-size: 13px; color: var(--gray); line-height: 1.85; margin-bottom: 8px; font-style: italic; }
+.hero-bio2 { font-size: 13px; color: var(--gray); line-height: 1.85; margin-bottom: 20px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+.tag { font-size: 10px; padding: 4px 11px; border-radius: 20px; background: var(--accent-light); color: #1d4ed8; font-weight: 500; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+.btn { font-family: var(--sans); font-size: 12px; font-weight: 500; padding: 10px 22px; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+.btn-primary { background: var(--accent); color: var(--white); border: none; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-outline { background: transparent; color: var(--navy); border: 1px solid var(--light); }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.quote-small { padding: 12px 16px; background: var(--off); border-radius: 8px; border: 1px solid var(--light); }
+.quote-small p { font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.7; margin-bottom: 8px; }
+.rules { display: flex; gap: 8px; flex-wrap: wrap; }
+.rule-pill { font-size: 11px; padding: 3px 12px; border-radius: 20px; border: 1px solid var(--light); color: var(--gray); }
 
-/* SECTIONS */
-section { padding: 80px 48px; }
+section { padding: 68px 48px; }
 section:nth-child(even) { background: var(--off); }
+.section-header { margin-bottom: 36px; }
+.section-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 6px; }
+.section-title { font-family: var(--serif); font-size: 28px; color: var(--navy); line-height: 1.2; }
 
-.section-header { margin-bottom: 48px; }
-.section-label {
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-.section-title {
-  font-family: var(--serif);
-  font-size: 32px;
-  color: var(--navy);
-  line-height: 1.2;
-}
-
-/* RESEARCH */
-.collab-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.collab-card {
-  background: var(--white);
-  border: 1px solid var(--light);
-  border-radius: 12px;
-  padding: 24px;
-  transition: box-shadow 0.2s, transform 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-.collab-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--accent);
-}
-.collab-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
-.collab-flag {
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-.collab-name {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--navy);
-  margin-bottom: 6px;
-}
-.collab-uni { font-size: 12px; color: var(--gray); margin-bottom: 10px; }
-.collab-topic { font-size: 12px; color: var(--gray); line-height: 1.6; }
-
-/* PUBLICATIONS */
-.pub-list { display: flex; flex-direction: column; gap: 16px; }
-.pub-card {
-  background: var(--white);
-  border: 1px solid var(--light);
-  border-radius: 12px;
-  padding: 20px 24px;
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  gap: 16px;
-  align-items: start;
-  transition: box-shadow 0.2s;
-}
-.pub-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-.pub-year {
-  font-family: var(--serif);
-  font-size: 20px;
-  color: var(--accent);
-  line-height: 1;
-  padding-top: 2px;
-}
-.pub-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
-.pub-venue { font-size: 12px; color: var(--gray); }
-.pub-status {
-  font-size: 10px;
-  padding: 3px 10px;
-  border-radius: 20px;
-  font-weight: 500;
-  white-space: nowrap;
-}
-.status-review { background: #fef3c7; color: #92400e; }
-.status-progress { background: #dcfce7; color: #166534; }
-
-/* INTERESTS */
-.interests-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
-.interest-card {
-  background: var(--white);
-  border: 1px solid var(--light);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.2s;
-}
+.interests-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
+.interest-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 16px; text-align: center; transition: all 0.2s; }
 .interest-card:hover { border-color: var(--accent); background: var(--accent-light); }
-.interest-icon {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: var(--accent-light);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px;
-}
-.interest-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
-.interest-name { font-size: 12px; font-weight: 500; color: var(--navy); }
+.interest-icon { width: 38px; height: 38px; border-radius: 9px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 9px; }
+.interest-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+.interest-name { font-size: 11px; font-weight: 500; color: var(--navy); }
 
-/* SKILLS */
-.skills-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.skill-group-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 14px; }
-.skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-.skill-pill {
-  font-size: 12px;
-  padding: 5px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--light);
-  color: var(--gray);
-  background: var(--white);
-  transition: all 0.2s;
-}
+.collab-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.collab-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 20px; transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden; }
+.collab-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+.collab-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.collab-flag { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
+.collab-name { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; }
+.collab-uni { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
+.collab-period { font-size: 10px; color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+.collab-points { padding-left: 14px; }
+.collab-points li { font-size: 11px; color: var(--gray); line-height: 1.65; margin-bottom: 2px; }
+
+.pub-list { display: flex; flex-direction: column; gap: 12px; }
+.pub-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 16px 20px; display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: start; transition: box-shadow 0.2s; }
+.pub-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+.pub-num { font-family: var(--serif); font-size: 20px; color: var(--accent); line-height: 1; padding-top: 2px; }
+.pub-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 3px; line-height: 1.5; }
+.pub-authors { font-size: 11px; color: var(--gray); margin-bottom: 2px; }
+.pub-venue { font-size: 11px; color: var(--gray); margin-bottom: 3px; }
+.pub-doi { font-size: 10px; color: var(--accent); text-decoration: none; }
+.pub-doi:hover { text-decoration: underline; }
+.pub-status { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 500; white-space: nowrap; height: fit-content; }
+.s-pub { background: #dcfce7; color: #166534; }
+.s-rev { background: #fef3c7; color: #92400e; }
+.s-acc { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; }
+.s-sub { background: #fefce8; color: #854d0e; }
+.s-pre { background: #f5f3ff; color: #6d28d9; }
+.pub-index { font-size: 10px; color: var(--gray); border: 1px solid var(--light); border-radius: 4px; padding: 1px 6px; margin-left: 4px; }
+
+.project-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+.project-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 18px; transition: all 0.2s; }
+.project-card:hover { border-color: var(--accent); box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+.project-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 5px; }
+.project-obj { font-size: 11px; color: var(--gray); line-height: 1.65; margin-bottom: 8px; }
+.project-tools { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.tool-tag { font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--accent-light); color: #1d4ed8; }
+.project-link { font-size: 11px; color: var(--accent); text-decoration: none; }
+.project-link:hover { text-decoration: underline; }
+
+.intern-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 22px; position: relative; overflow: hidden; }
+.intern-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); }
+.intern-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; flex-wrap: wrap; gap: 8px; }
+.intern-title { font-size: 15px; font-weight: 500; color: var(--navy); }
+.intern-org { font-size: 12px; color: var(--gray); margin-top: 2px; }
+.intern-period { font-size: 11px; color: var(--accent); font-weight: 500; }
+.intern-points { padding-left: 16px; }
+.intern-points li { font-size: 12px; color: var(--gray); line-height: 1.7; margin-bottom: 3px; }
+.cert-hint { margin-top: 14px; padding: 10px 14px; background: var(--accent-light); border-radius: 8px; font-size: 11px; color: #1d4ed8; }
+
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 26px; }
+.skill-group-title { font-size: 12px; font-weight: 500; color: var(--navy); margin-bottom: 11px; border-bottom: 1px solid var(--light); padding-bottom: 7px; }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-pill { font-size: 11px; padding: 4px 11px; border-radius: 20px; border: 1px solid var(--light); color: var(--gray); background: var(--white); transition: all 0.2s; }
 .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
 .skill-pill.core { background: var(--accent); color: var(--white); border-color: var(--accent); }
 
-/* EXPERIENCE */
-.exp-timeline { position: relative; padding-left: 24px; }
-.exp-timeline::before {
-  content: '';
-  position: absolute; left: 0; top: 6px; bottom: 6px;
-  width: 1px;
-  background: var(--light);
-}
-.exp-item { position: relative; padding-bottom: 32px; }
-.exp-item:last-child { padding-bottom: 0; }
-.exp-dot {
-  position: absolute; left: -28px; top: 6px;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--white);
-  box-shadow: 0 0 0 2px var(--accent);
-}
-.exp-period { font-size: 11px; color: var(--accent); font-weight: 500; margin-bottom: 4px; letter-spacing: 0.5px; }
-.exp-role { font-size: 15px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
-.exp-company { font-size: 13px; color: var(--gray); margin-bottom: 8px; }
-.exp-desc { font-size: 13px; color: var(--gray); line-height: 1.7; }
+.training-list { display: flex; flex-direction: column; gap: 12px; }
+.training-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+.training-year { font-family: var(--serif); font-size: 16px; color: var(--accent); min-width: 36px; padding-top: 2px; }
+.training-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.training-org { font-size: 11px; color: var(--gray); margin-bottom: 4px; }
+.training-period { font-size: 10px; color: var(--accent); font-weight: 500; margin-bottom: 5px; }
+.training-points { padding-left: 14px; }
+.training-points li { font-size: 11px; color: var(--gray); line-height: 1.65; margin-bottom: 2px; }
+.cert-badge { font-size: 10px; padding: 2px 9px; border-radius: 20px; background: #dcfce7; color: #166534; margin-left: 6px; }
 
-/* CONTACT */
+.exp-timeline { position: relative; padding-left: 28px; }
+.exp-timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--light); }
+.exp-item { position: relative; padding-bottom: 30px; }
+.exp-item:last-child { padding-bottom: 0; }
+.exp-dot { position: absolute; left: -32px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--accent); }
+.exp-period { font-size: 10px; color: var(--accent); font-weight: 500; margin-bottom: 2px; }
+.exp-role { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.exp-company { font-size: 12px; color: var(--gray); margin-bottom: 6px; }
+.exp-points { padding-left: 14px; }
+.exp-points li { font-size: 12px; color: var(--gray); line-height: 1.7; margin-bottom: 2px; }
+
+.edu-list { display: flex; flex-direction: column; gap: 16px; }
+.edu-card { background: var(--white); border: 1px solid var(--light); border-radius: 12px; padding: 18px 22px; display: flex; gap: 16px; align-items: flex-start; }
+.edu-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.edu-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+.edu-degree { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 2px; }
+.edu-school { font-size: 12px; color: var(--gray); margin-bottom: 2px; }
+.edu-period { font-size: 11px; color: var(--accent); font-weight: 500; margin-bottom: 3px; }
+.edu-cgpa { font-size: 11px; color: var(--gray); }
+.edu-thesis { font-size: 11px; color: var(--gray); font-style: italic; margin-top: 3px; }
+
+.activity-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; }
+.activity-item { background: var(--white); border: 1px solid var(--light); border-radius: 10px; padding: 13px 16px; display: flex; align-items: flex-start; gap: 10px; }
+.activity-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+.activity-text { font-size: 12px; color: var(--text); line-height: 1.6; }
+.activity-year { font-size: 10px; color: var(--gray); margin-top: 2px; }
+
+.blog-card { background: var(--white); border: 1px solid var(--light); border-radius: 14px; overflow: hidden; max-width: 540px; }
+.blog-img-area { height: 150px; background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%); display: flex; align-items: center; justify-content: center; position: relative; }
+.blog-img-area svg { width: 44px; height: 44px; stroke: var(--accent); fill: none; stroke-width: 1.5; opacity: 0.45; }
+.blog-img-area span { position: absolute; bottom: 8px; right: 10px; font-size: 10px; color: var(--accent); background: rgba(255,255,255,0.8); padding: 2px 9px; border-radius: 10px; }
+.blog-body { padding: 18px 22px; }
+.blog-tag { font-size: 10px; color: var(--accent); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; }
+.blog-title { font-family: var(--serif); font-size: 18px; color: var(--navy); margin-bottom: 9px; }
+.blog-text { font-size: 13px; color: var(--gray); line-height: 1.8; }
+
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.contact-intro {
-  font-size: 15px;
-  color: var(--gray);
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-.contact-item {
-  display: flex; align-items: center; gap: 12px;
-  margin-bottom: 14px;
-}
-.contact-icon {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  background: var(--accent-light);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.contact-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 2; }
+.contact-intro { font-size: 13px; color: var(--gray); line-height: 1.8; margin-bottom: 22px; }
+.contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.contact-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-icon svg { width: 14px; height: 14px; stroke: var(--accent); fill: none; stroke-width: 2; }
 .contact-text { font-size: 13px; color: var(--gray); }
 .contact-text a { color: var(--accent); text-decoration: none; }
-.contact-form-area {
-  background: var(--navy);
-  border-radius: 16px;
-  padding: 32px;
-}
-.contact-form-area .form-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 6px; display: block; }
-.contact-form-area input,
-.contact-form-area textarea {
-  width: 100%;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 10px 14px;
-  color: white;
-  font-family: var(--sans);
-  font-size: 13px;
-  margin-bottom: 14px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.contact-form-area input:focus,
-.contact-form-area textarea:focus { border-color: rgba(37,99,235,0.6); }
-.contact-form-area textarea { height: 100px; resize: none; }
-.contact-form-area .btn-send {
-  width: 100%;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 11px;
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.contact-form-area .btn-send:hover { background: #1d4ed8; }
+.cform { background: var(--navy); border-radius: 14px; padding: 26px; }
+.flabel { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 5px; display: block; }
+.cform input, .cform textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 7px; padding: 8px 11px; color: white; font-family: var(--sans); font-size: 12px; margin-bottom: 11px; outline: none; }
+.cform textarea { height: 88px; resize: none; }
+.btn-send { width: 100%; background: var(--accent); color: white; border: none; border-radius: 7px; padding: 10px; font-family: var(--sans); font-size: 12px; font-weight: 500; cursor: pointer; }
+.btn-send:hover { background: #1d4ed8; }
 
-/* FOOTER */
-footer {
-  background: var(--navy);
-  padding: 24px 48px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-name { font-family: var(--serif); font-size: 15px; color: rgba(255,255,255,0.7); }
-.footer-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+footer { background: var(--navy); padding: 20px 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-name { font-family: var(--serif); font-size: 14px; color: rgba(255,255,255,0.6); }
+.footer-note { font-size: 11px; color: rgba(255,255,255,0.28); }
 
-/* ANIMATIONS */
-.fade-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity: 1; transform: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
+  nav { padding: 0 18px; }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 58px; left: 0; right: 0; background: white; padding: 14px 18px; border-bottom: 1px solid var(--light); gap: 12px; }
+  .hamburger { display: flex; }
   .hero { grid-template-columns: 1fr; }
-  .hero-left { min-height: 320px; }
-  .collab-grid { grid-template-columns: 1fr; }
-  .interests-grid { grid-template-columns: repeat(2,1fr); }
-  .skills-section { grid-template-columns: 1fr; }
+  .hero-left { min-height: 280px; padding: 36px 20px; }
+  .hero-right { padding: 32px 20px; }
+  .hero-name { font-size: 30px; }
+  section { padding: 48px 18px; }
+  .collab-grid, .interests-grid, .project-grid, .skills-grid, .activity-list { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  nav { padding: 0 20px; }
-  .nav-links { gap: 16px; }
-  section { padding: 60px 24px; }
-  .hero-right { padding: 40px 24px; }
-  .hero-name { font-size: 32px; }
+  .pub-card { grid-template-columns: 36px 1fr; }
+  .pub-status { grid-column: 2; }
+  footer { padding: 16px 18px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="nav-name">Nyem Hasan</span>
-  <div class="nav-links">
+  <div class="nav-links" id="navLinks">
     <a href="#about">About</a>
+    <a href="#interests">Interests</a>
     <a href="#research">Research</a>
     <a href="#publications">Publications</a>
-    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#internship">Internship</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#training">Training</a>
+    <a href="#blog">Blog</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="about">
   <div class="hero-left">
     <div class="avatar-wrap">
       <div class="avatar-ring"></div>
-      <div class="avatar">N</div>
+      <div class="avatar" id="avatarEl">
+        <img id="avatarImg" alt="Md Nyem Hasan Bhuiyan"/>
+        N
+      </div>
     </div>
     <div class="open-badge">Open to MS / PhD Positions</div>
     <div class="hero-contact">
       Dhaka, Bangladesh<br/>
-      <a href="mailto:nyem.hasan@live-security.net">nyem.hasan@live-security.net</a><br/>
+      <a href="mailto:nyemhasan.diu@gmail.com">nyemhasan.diu@gmail.com</a><br/>
       +880 1824039747
     </div>
     <div class="social-row">
-      <!-- LinkedIn -->
-      <div class="social-btn" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-      </div>
-      <!-- GitHub -->
-      <div class="social-btn" title="GitHub">
+      <a href="https://github.com/mebnhme" class="social-btn" target="_blank" title="GitHub">
         <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-      </div>
-      <!-- ORCID -->
-      <div class="social-btn" title="ORCID">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path fill="none" stroke-width="2.5" d="M8 7v10M12 7c4 0 6 2 6 5s-2 5-6 5h-4" style="stroke:rgba(255,255,255,0.7);fill:none;"/></svg>
-      </div>
-      <!-- Email -->
-      <div class="social-btn" title="Email">
+      </a>
+      <a href="mailto:nyemhasan.diu@gmail.com" class="social-btn" title="Email">
         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
+      </a>
+      <a href="#" class="social-btn" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="#" class="social-btn" title="Google Scholar">
+        <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+      </a>
     </div>
   </div>
 
   <div class="hero-right">
     <div class="eyebrow">Researcher · Developer · ML Engineer</div>
     <h1 class="hero-name">Md Nyem Hasan<br/>Bhuiyan</h1>
-    <div class="hero-sub">B.Sc. in Computer Science &amp; Engineering · Dhaka International University, 2018</div>
-    <p class="hero-bio">
-      I am a researcher and developer with active international collaborations in Graph Neural Network security and Healthcare AI. I bring hands-on experience building intelligent systems — from federated learning frameworks to transformer-based NLP models — and I am eager to contribute to impactful PhD or MS research programs.
-    </p>
+    <div class="hero-sub">B.Sc. in CSE · Dhaka International University</div>
+    <div class="hero-cgpa">CGPA 3.70 / 4.00 &nbsp;·&nbsp; 11 Publications</div>
+    <p class="hero-bio">"A nature-loving and sports-driven individual, passionate about using my knowledge in Computer Science and Engineering to help people through Data Science and AI-driven solutions."</p>
+    <p class="hero-bio2">Active researcher collaborating internationally with faculty at Florida State University and University of Central Punjab, with publications in IEEE, Nature (Scientific Reports), and Springer journals.</p>
     <div class="tag-row">
-      <span class="tag">Machine Learning</span>
-      <span class="tag">GNN Security</span>
-      <span class="tag">Healthcare AI</span>
-      <span class="tag">Federated Learning</span>
-      <span class="tag">NLP</span>
-      <span class="tag">Computer Vision</span>
+      <span class="tag">Machine Learning</span><span class="tag">GNN Security</span><span class="tag">Healthcare AI</span>
+      <span class="tag">Federated Learning</span><span class="tag">NLP & Transformers</span><span class="tag">Computer Vision</span>
+      <span class="tag">Cybersecurity</span><span class="tag">Data Science</span>
     </div>
     <div class="btn-row">
       <a href="#" class="btn btn-primary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download CV
       </a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
+    <div class="quote-small">
+      <p>"We sometimes miss the simple beauty of small moments in our everyday lives. Understanding ourselves means accepting our strengths and weaknesses because that makes us who we are."</p>
+      <div class="rules">
+        <span class="rule-pill">Never waste your food</span>
+        <span class="rule-pill">Never hurt anyone</span>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- RESEARCH INTERESTS -->
+<section id="interests">
+  <div class="section-header fade-up">
+    <div class="section-label">Focus Areas</div>
+    <div class="section-title">Research Interests</div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="interest-name">Machine Learning</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="interest-name">Deep Learning</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="interest-name">GNN Security</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="interest-name">Healthcare AI</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="interest-name">NLP & Transformers</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="interest-name">Computer Vision</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg></div><div class="interest-name">Cybersecurity & IoT</div></div>
+    <div class="interest-card fade-up"><div class="interest-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><div class="interest-name">Data Science</div></div>
+  </div>
+</section>
 
 <!-- RESEARCH -->
 <section id="research">
@@ -548,20 +333,35 @@ footer {
     <div class="collab-card fade-up">
       <div class="collab-flag">Florida State University · USA</div>
       <div class="collab-name">Prof. Yushun Dong</div>
-      <div class="collab-uni">Research Collaborator</div>
-      <div class="collab-topic">Graph Neural Network (GNN) Security — model fingerprinting techniques for ownership verification and resilience against adversarial attacks such as pruning and retraining, evaluated on Cora, CiteSeer, and PubMed benchmarks.</div>
+      <div class="collab-uni">Dept. of Computer Science</div>
+      <div class="collab-period">July 2025 – Present · Research Collaborator</div>
+      <ul class="collab-points">
+        <li>Developing fingerprinting methods to prove ownership of stolen GNN models</li>
+        <li>Experiments on Cora, CiteSeer, and PubMed benchmark graph datasets</li>
+        <li>Resilience research against pruning and retraining adversarial attacks</li>
+      </ul>
     </div>
     <div class="collab-card fade-up">
       <div class="collab-flag">University of Central Punjab · Pakistan</div>
       <div class="collab-name">Dr Asad Abbas</div>
-      <div class="collab-uni">Research Collaborator</div>
-      <div class="collab-topic">Healthcare AI and Medical Machine Learning — federated learning for Alzheimer's disease and kidney disease risk prediction, generative deep learning for personalized cancer immunotherapy, and transformer models for Bengali cyberbullying detection.</div>
+      <div class="collab-uni">Dept. of Computer Science</div>
+      <div class="collab-period">September 2025 – Present · Research Collaborator</div>
+      <ul class="collab-points">
+        <li>Federated learning for privacy-preserving Alzheimer's disease detection</li>
+        <li>Generative deep learning for personalized cancer immunotherapy</li>
+        <li>Multi-modal transformer for cancer drug response prediction</li>
+      </ul>
     </div>
     <div class="collab-card fade-up">
       <div class="collab-flag">Southeast University · Bangladesh</div>
       <div class="collab-name">Asst. Prof. Khandaker Mohammad Mohi Uddin</div>
-      <div class="collab-uni">Research Assistant</div>
-      <div class="collab-topic">Feature optimisation, model evaluation, and data analytics. Contributed to multiple research projects spanning machine learning and intelligent systems.</div>
+      <div class="collab-uni">Dept. of CSE</div>
+      <div class="collab-period">Jan 2024 – Oct 2024 · Research Assistant</div>
+      <ul class="collab-points">
+        <li>Feature optimisation and model evaluation for improved predictions</li>
+        <li>Data analytics and visualizations on large datasets</li>
+        <li>Contributed to writing and reviewing research papers</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -569,92 +369,196 @@ footer {
 <!-- PUBLICATIONS -->
 <section id="publications">
   <div class="section-header fade-up">
-    <div class="section-label">Scholarly Work</div>
-    <div class="section-title">Publications</div>
+    <div class="section-label">Scholarly Output</div>
+    <div class="section-title">Publications <span style="font-family:var(--sans);font-size:15px;color:var(--gray);font-weight:300;">&nbsp;11 papers</span></div>
   </div>
   <div class="pub-list">
     <div class="pub-card fade-up">
-      <div class="pub-year">2024</div>
+      <div class="pub-num">1</div>
       <div>
-        <div class="pub-title">GNN Fingerprinting for Model Ownership Verification Against Adversarial Attacks</div>
-        <div class="pub-venue">In collaboration with Prof. Yushun Dong, Florida State University · Cora, CiteSeer, PubMed benchmarks</div>
+        <div class="pub-title">A Feature Selection-Based Ensemble Machine Learning Method for Predicting Chronic Kidney Cancer</div>
+        <div class="pub-authors">MTA Bhuiyan, Md. Nyem Hasan Bhuiyan, Uddin K.M.M., MA Based</div>
+        <div class="pub-venue">3rd IEEE BECITHCON, pp. 193–199, 2024 <span class="pub-index">IEEE</span></div>
+        <a href="https://doi.org/10.1109/BECITHCON64160.2024.10962730" class="pub-doi" target="_blank">DOI: 10.1109/BECITHCON64160.2024.10962730 ↗</a>
       </div>
-      <span class="pub-status status-review">Under Review</span>
+      <span class="pub-status s-pub">Published</span>
     </div>
     <div class="pub-card fade-up">
-      <div class="pub-year">2024</div>
+      <div class="pub-num">2</div>
       <div>
-        <div class="pub-title">Federated Learning Framework for Alzheimer's Disease Risk Prediction</div>
-        <div class="pub-venue">In collaboration with Dr Asad Abbas, University of Central Punjab · Healthcare AI</div>
+        <div class="pub-title">Predicting Gender from Twitter Text Messages Using Artificial Intelligence and Text Analysis Methods</div>
+        <div class="pub-authors">Md. Nyem Hasan Bhuiyan, Rahman A.</div>
+        <div class="pub-venue">Journal of Artificial Intelligence and System Modelling, Pages 91–106, 2025</div>
+        <a href="https://doi.org/10.22034/JAISM2025.508831.1110" class="pub-doi" target="_blank">DOI: 10.22034/JAISM2025.508831.1110 ↗</a>
       </div>
-      <span class="pub-status status-progress">In Progress</span>
+      <span class="pub-status s-pub">Published</span>
     </div>
     <div class="pub-card fade-up">
-      <div class="pub-year">2024</div>
+      <div class="pub-num">3</div>
       <div>
-        <div class="pub-title">Transformer Model Optimisation for Bengali Cyberbullying Detection</div>
-        <div class="pub-venue">NLP · Bengali Language Processing · Medical &amp; Social AI</div>
+        <div class="pub-title">Statistical Modeling of Health Inequities: A Multivariate Regression Approach to Social Determinants of Public Health</div>
+        <div class="pub-authors">S. Sayem, Md. Nyem Hasan Bhuiyan, N.A. Sayed, A.D. Nath</div>
+        <div class="pub-venue">Al-Kindy College Medical Journal</div>
+        <a href="https://doi.org/10.47723/vzkbq424" class="pub-doi" target="_blank">DOI: 10.47723/vzkbq424 ↗</a>
       </div>
-      <span class="pub-status status-progress">In Progress</span>
+      <span class="pub-status s-pub">Published</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">4</div>
+      <div>
+        <div class="pub-title">Phishing URL Classification Using Pre-Trained DistilBERT Model</div>
+        <div class="pub-authors">Md Nyem Hasan Bhuiyan</div>
+        <div class="pub-venue">International Journal of Digital Systems · Article ID: 237849</div>
+      </div>
+      <span class="pub-status s-pub">Published</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">5</div>
+      <div>
+        <div class="pub-title">AI-Driven Cybersecurity: Building Adaptive Threat Detection Systems Using Deep Learning</div>
+        <div class="pub-authors">Efaz Kabir, Md Nyem Hasan Bhuiyan, Samya Datta, Mandal Shubhankar, Mohammad Quayes Bin Habib</div>
+        <div class="pub-venue">International Journal of Science and Research Archive</div>
+        <a href="https://doi.org/10.30574/ijsra.2025.17.1.2928" class="pub-doi" target="_blank">DOI: 10.30574/ijsra.2025.17.1.2928 ↗</a>
+      </div>
+      <span class="pub-status s-pub">Published</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">6</div>
+      <div>
+        <div class="pub-title">Advancing Healthcare: Machine Learning-Based Prediction of Disc Hernia Risk for Personalized Intervention</div>
+        <div class="pub-authors">Md Nyem Hasan Bhuiyan, Rahman A.</div>
+        <div class="pub-venue">Journal of Artificial Intelligence and System Modelling, 2026</div>
+        <a href="https://doi.org/10.22034/jaism.2026.574887.1181" class="pub-doi" target="_blank">DOI: 10.22034/jaism.2026.574887.1181 ↗</a>
+      </div>
+      <span class="pub-status s-pub">Published</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">7</div>
+      <div>
+        <div class="pub-title">Diagnosis of Cattle (Cow) Lumpy Skin Disease Using Convolutional Neural Networks</div>
+        <div class="pub-authors">S. Sayem, SHM Ratul, Md. Nyem Hasan Bhuiyan, AA Zabir, MAA Sarkar et al.</div>
+        <div class="pub-venue">Egyptian Journal of Veterinary Sciences <span class="pub-index">SCOPUS Q3</span> · Publisher: NIDOC</div>
+      </div>
+      <span class="pub-status s-acc">Accepted</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">8</div>
+      <div>
+        <div class="pub-title">A Hybrid CNN-Transformer Architecture for Interpretable Knee Osteoarthritis Diagnosis</div>
+        <div class="pub-authors">RMZU Abideen, Md Nyem Hasan Bhuiyan, NA Butt, I. Ashraf, D. Gavilanes, MM Vergara</div>
+        <div class="pub-venue">Scientific Reports <span class="pub-index">SCOPUS Q1</span> · Publisher: Nature</div>
+      </div>
+      <span class="pub-status s-rev">Under Review</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">9</div>
+      <div>
+        <div class="pub-title">Multi-Modal Transformer Architecture for Cancer Drug Response Prediction Using Integrated Omics Data</div>
+        <div class="pub-authors">RMZU Abideen, Md Nyem Hasan Bhuiyan, R. Latif, A. Rahman, A. Abbas, IF Siddiqui</div>
+        <div class="pub-venue">Journal of Computer-Aided Molecular Design <span class="pub-index">SCOPUS Q2</span> · Publisher: Springer</div>
+      </div>
+      <span class="pub-status s-sub">Submitted</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">10</div>
+      <div>
+        <div class="pub-title">Privacy-Preserving Federated Learning for Alzheimer's Disease Detection Using Clinical Features</div>
+        <div class="pub-authors">Rana M. Zain Ul Abideen, Md. Nyem Hasan Bhuiyan, Dr Asad Abbas</div>
+        <div class="pub-venue">The Journal of Supercomputing <span class="pub-index">SCOPUS Q2</span> · Publisher: Springer</div>
+      </div>
+      <span class="pub-status s-pre">In Preparation</span>
+    </div>
+    <div class="pub-card fade-up">
+      <div class="pub-num">11</div>
+      <div>
+        <div class="pub-title">Machine Learning-Driven Risk Stratification and Stage Classification in Chronic Kidney Disease</div>
+        <div class="pub-authors">Rana M. Zain Ul Abideen, Md Nyem Hasan Bhuiyan, NA Butt</div>
+        <div class="pub-venue">IEEE Journal of Biomedical Health Informatics <span class="pub-index">SCOPUS Q1</span> · Publisher: IEEE</div>
+      </div>
+      <span class="pub-status s-pre">In Preparation</span>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH INTERESTS -->
-<section>
+<!-- PROJECTS -->
+<section id="projects">
   <div class="section-header fade-up">
-    <div class="section-label">Focus Areas</div>
-    <div class="section-title">Research Interests</div>
+    <div class="section-label">Hands-on Work</div>
+    <div class="section-title">Projects</div>
   </div>
-  <div class="interests-grid">
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-      </div>
-      <div class="interest-name">Machine Learning</div>
+  <div class="project-grid">
+    <div class="project-card fade-up">
+      <div class="project-title">Spam Mail Detection Using Machine Learning</div>
+      <div class="project-obj">Built a model to classify emails as spam or non-spam using Naïve Bayes and Logistic Regression with high accuracy.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">Scikit-Learn</span><span class="tool-tag">NLP</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-      </div>
-      <div class="interest-name">Deep Learning</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Fake News Prediction Using Machine Learning</div>
+      <div class="project-obj">Classified news articles as real or fake using NLP with TF-IDF and Logistic Regression to combat misinformation.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">NLTK</span><span class="tool-tag">Scikit-Learn</span><span class="tool-tag">Pandas</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="interest-name">GNN Security</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Breast Cancer Classification with Neural Networks</div>
+      <div class="project-obj">Neural network to classify tumors as benign or malignant based on medical features with Keras/TensorFlow.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">Keras</span><span class="tool-tag">TensorFlow</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <div class="interest-name">Healthcare AI</div>
+    <div class="project-card fade-up">
+      <div class="project-title">IMDB Reviews Sentiment Analysis with LSTM</div>
+      <div class="project-obj">LSTM-based deep learning model to classify IMDB movie reviews as positive or negative with sequence modeling.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">Keras</span><span class="tool-tag">LSTM</span><span class="tool-tag">NLP</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-      </div>
-      <div class="interest-name">NLP</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Credit Card Fraud Detection</div>
+      <div class="project-obj">ML model to identify fraudulent transactions using anomaly detection and classification with data balancing.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">Scikit-Learn</span><span class="tool-tag">Pandas</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      </div>
-      <div class="interest-name">Computer Vision</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Parkinson's Disease Detection</div>
+      <div class="project-obj">ML model to detect Parkinson's from voice measurements using SVM and Random Forest for early diagnosis.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">SVM</span><span class="tool-tag">Random Forest</span><span class="tool-tag">Scikit-Learn</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114.08 0M1.42 9a16 16 0 0121.16 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
-      </div>
-      <div class="interest-name">IoT &amp; Network Security</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Content-Based Movie Recommender System</div>
+      <div class="project-obj">Recommendation system using cosine similarity and NLP analysis of movie metadata for personalized suggestions.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">Pandas</span><span class="tool-tag">NLP</span><span class="tool-tag">Scikit-Learn</span></div>
     </div>
-    <div class="interest-card fade-up">
-      <div class="interest-icon">
-        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-      </div>
-      <div class="interest-name">Data Science</div>
+    <div class="project-card fade-up">
+      <div class="project-title">Image Data Processing for Deep Learning</div>
+      <div class="project-obj">Processed image datasets using resizing, normalization, and augmentation techniques to improve model robustness.</div>
+      <div class="project-tools"><span class="tool-tag">Python</span><span class="tool-tag">OpenCV</span><span class="tool-tag">TensorFlow</span><span class="tool-tag">Keras</span></div>
+      <a href="#" class="project-link">View on Google Colab ↗</a>
     </div>
+  </div>
+  <p style="font-size:11px;color:var(--gray);margin-top:16px;font-style:italic;">Replace the "#" links with your actual Google Colab URLs after uploading to GitHub.</p>
+</section>
+
+<!-- INTERNSHIP -->
+<section id="internship">
+  <div class="section-header fade-up">
+    <div class="section-label">Research Training</div>
+    <div class="section-title">Research Internship</div>
+  </div>
+  <div class="intern-card fade-up">
+    <div class="intern-header">
+      <div>
+        <div class="intern-title">Research Intern</div>
+        <div class="intern-org">Neural Research · Dhaka, Bangladesh</div>
+        <div style="font-size:11px;color:var(--gray);margin-top:2px;">Supervisor: Muhammad Minoar Hossain</div>
+      </div>
+      <div class="intern-period">January 2025 – April 2025</div>
+    </div>
+    <ul class="intern-points">
+      <li>Trained in advanced ML and Explainable AI (XAI) tools including SHAP, LIME, and Grad-CAM</li>
+      <li>Built interpretable ML/DL models for real-world and research-based problems</li>
+      <li>Developed skills in ethical AI, reproducibility, and scientific writing for publication</li>
+    </ul>
+    <div class="cert-hint">Certificate available — upload your certificate image to GitHub repository and add the link here.</div>
   </div>
 </section>
 
@@ -664,34 +568,102 @@ footer {
     <div class="section-label">Technical Expertise</div>
     <div class="section-title">Skills</div>
   </div>
-  <div class="skills-section">
+  <div class="skills-grid">
     <div class="fade-up">
-      <div class="skill-group-title">Programming &amp; Frameworks</div>
+      <div class="skill-group-title">Programming & Tools</div>
       <div class="skill-pills">
-        <span class="skill-pill core">Python</span>
-        <span class="skill-pill core">PyTorch</span>
-        <span class="skill-pill core">TensorFlow</span>
-        <span class="skill-pill">Scikit-learn</span>
-        <span class="skill-pill">Keras</span>
-        <span class="skill-pill">NumPy</span>
-        <span class="skill-pill">Pandas</span>
-        <span class="skill-pill">JavaScript</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">Git</span>
+        <span class="skill-pill core">Python</span><span class="skill-pill core">PyTorch</span><span class="skill-pill core">TensorFlow</span>
+        <span class="skill-pill">Keras</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">NumPy</span>
+        <span class="skill-pill">Pandas</span><span class="skill-pill">R</span><span class="skill-pill">SQL</span>
+        <span class="skill-pill">Git</span><span class="skill-pill">OpenCV</span><span class="skill-pill">NLTK</span>
       </div>
     </div>
     <div class="fade-up">
-      <div class="skill-group-title">Research &amp; AI Domains</div>
+      <div class="skill-group-title">AI & Research Domains</div>
       <div class="skill-pills">
-        <span class="skill-pill core">Graph Neural Networks</span>
-        <span class="skill-pill core">Federated Learning</span>
-        <span class="skill-pill">Transformer Models</span>
-        <span class="skill-pill">Computer Vision</span>
-        <span class="skill-pill">NLP</span>
-        <span class="skill-pill">Model Security</span>
-        <span class="skill-pill">Data Analytics</span>
-        <span class="skill-pill">Feature Engineering</span>
-        <span class="skill-pill">Network Security</span>
+        <span class="skill-pill core">Graph Neural Networks</span><span class="skill-pill core">Federated Learning</span>
+        <span class="skill-pill">Transformer Models</span><span class="skill-pill">LSTM / RNN</span>
+        <span class="skill-pill">Computer Vision</span><span class="skill-pill">NLP</span>
+        <span class="skill-pill">XAI (SHAP, LIME)</span><span class="skill-pill">Generative AI</span><span class="skill-pill">GANs</span>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="skill-group-title">Networking & Systems</div>
+      <div class="skill-pills">
+        <span class="skill-pill core">CCNA</span><span class="skill-pill">Linux</span>
+        <span class="skill-pill">Network Security</span><span class="skill-pill">IoT</span>
+        <span class="skill-pill">C#</span><span class="skill-pill">MS SQL Server</span>
+        <span class="skill-pill">HTML / CSS</span><span class="skill-pill">Data Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+  <div class="section-header fade-up">
+    <div class="section-label">Certifications & Courses</div>
+    <div class="section-title">Training</div>
+  </div>
+  <div class="training-list">
+    <div class="training-card fade-up">
+      <div class="training-year">2025</div>
+      <div>
+        <div class="training-title">Deep Learning & Generative AI <span style="font-size:11px;color:var(--gray);">Batch 18</span></div>
+        <div class="training-org">AI Quest Intelligence & Study Mart · Dhaka, Bangladesh</div>
+        <div class="training-period">February 2025 – October 2025</div>
+        <ul class="training-points">
+          <li>Deep Learning architectures & optimisation · Advanced NLP with Transformers</li>
+          <li>Generative AI & LLM optimisation · Computer Vision with GANs & Object Detection</li>
+          <li>LLM Enhancement & Alignment</li>
+        </ul>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2024</div>
+      <div>
+        <div class="training-title">Data Science & Machine Learning with Python & R <span class="cert-badge">Certificate</span></div>
+        <div class="training-org">Data Solution 360 · Dhaka, Bangladesh · ID: DS3602503MNHB08</div>
+        <div class="training-period">September 2024 – February 2025</div>
+        <ul class="training-points">
+          <li>Statistical analysis, EDA, data cleaning and visualisation in Python and R</li>
+          <li>Supervised and unsupervised machine learning · End-to-end data science projects</li>
+        </ul>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2021</div>
+      <div>
+        <div class="training-title">Become a Python Developer <span style="font-size:11px;color:var(--gray);">Batch 8</span></div>
+        <div class="training-org">AI Quest · Dhaka, Bangladesh</div>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2015</div>
+      <div>
+        <div class="training-title">C# and MS SQL Server</div>
+        <div class="training-org">Dhaka International University (DIU)</div>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2014</div>
+      <div>
+        <div class="training-title">CCNA · Linux</div>
+        <div class="training-org">CSL Training · Dhaka, Bangladesh</div>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2013</div>
+      <div>
+        <div class="training-title">HTML and CSS Course</div>
+        <div class="training-org">The Knowledge Academy</div>
+      </div>
+    </div>
+    <div class="training-card fade-up">
+      <div class="training-year">2011</div>
+      <div>
+        <div class="training-title">Advanced Hardware</div>
+        <div class="training-org">Abdullah Computer Training Institute</div>
       </div>
     </div>
   </div>
@@ -706,24 +678,120 @@ footer {
   <div class="exp-timeline">
     <div class="exp-item fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-period">2023 — Present</div>
+      <div class="exp-period">November 2024 – Present</div>
       <div class="exp-role">Senior Support Engineer</div>
       <div class="exp-company">Live Security System · Dhaka, Bangladesh</div>
-      <div class="exp-desc">Leading technical support operations while pursuing parallel research collaborations in ML and AI. Applying data-driven approaches to security systems.</div>
+      <ul class="exp-points">
+        <li>Organised system data to support ML and analytics workflows</li>
+        <li>Shared clean logs with data teams for improved model insights</li>
+        <li>Created dashboards to track trends and support data-driven decisions</li>
+      </ul>
     </div>
     <div class="exp-item fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-period">2020 — 2023</div>
+      <div class="exp-period">January 2021 – December 2023</div>
       <div class="exp-role">Junior Software Developer</div>
       <div class="exp-company">Mega-Soft Solution BD · Dhaka, Bangladesh</div>
-      <div class="exp-desc">Developed software solutions for clients, working across the full stack and contributing to product development cycles.</div>
+      <ul class="exp-points">
+        <li>Developed software solutions across the full stack for multiple clients</li>
+        <li>Contributed to product development cycles and technical documentation</li>
+        <li>Collaborated with cross-functional teams on project delivery</li>
+      </ul>
     </div>
     <div class="exp-item fade-up">
       <div class="exp-dot"></div>
-      <div class="exp-period">2014 — 2018</div>
-      <div class="exp-role">B.Sc. in Computer Science &amp; Engineering</div>
-      <div class="exp-company">Dhaka International University · Dhaka, Bangladesh</div>
-      <div class="exp-desc">Graduated with a strong foundation in algorithms, data structures, and software engineering.</div>
+      <div class="exp-period">January 2019 – March 2020</div>
+      <div class="exp-role">Internship</div>
+      <div class="exp-company">N.R. Group Corporate Office · Dhaka, Bangladesh</div>
+      <ul class="exp-points">
+        <li>Supported IT operations and system maintenance tasks</li>
+        <li>Assisted with data management, reporting, and system monitoring</li>
+        <li>Gained hands-on experience in enterprise-level IT workflows</li>
+      </ul>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-dot"></div>
+      <div class="exp-period">June 2014 – December 2018</div>
+      <div class="exp-role">Teacher</div>
+      <div class="exp-company">EdCam Education · Gulshan, Dhaka, Bangladesh</div>
+      <ul class="exp-points">
+        <li>Taught Mathematics and ICT to O- and A-level students</li>
+        <li>Prepared question papers and reviewed answer scripts with constructive feedback</li>
+        <li>Mentored students and tracked academic progress through regular assessments</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header fade-up">
+    <div class="section-label">Academic Background</div>
+    <div class="section-title">Education</div>
+  </div>
+  <div class="edu-list">
+    <div class="edu-card fade-up">
+      <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <div>
+        <div class="edu-degree">Bachelor of Science in Computer Science & Engineering</div>
+        <div class="edu-school">Dhaka International University (DIU) · Dhaka, Bangladesh</div>
+        <div class="edu-period">2015 – 2018</div>
+        <div class="edu-cgpa">CGPA: 3.70 / 4.00</div>
+        <div class="edu-thesis">Thesis: Department Management System — A Smart Approach to University Administration</div>
+      </div>
+    </div>
+    <div class="edu-card fade-up">
+      <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+      <div>
+        <div class="edu-degree">Diploma in Computer Engineering</div>
+        <div class="edu-school">CCN Polytechnic Institute · Bangladesh</div>
+        <div class="edu-period">2009 – 2014</div>
+        <div class="edu-cgpa">CGPA: 3.45 / 4.00</div>
+      </div>
+    </div>
+    <div class="edu-card fade-up">
+      <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div>
+        <div class="edu-degree">Secondary School Certificate (SSC) — Science Group</div>
+        <div class="edu-school">Elahabad High School · Comilla, Bangladesh</div>
+        <div class="edu-period">2007 – 2009</div>
+        <div class="edu-cgpa">CGPA: 3.94 / 5.00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<section>
+  <div class="section-header fade-up">
+    <div class="section-label">Beyond Research</div>
+    <div class="section-title">Leadership & Extracurricular Activities</div>
+  </div>
+  <div class="activity-list">
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">Class Representative (CR), Dept. of CSE — Dhaka International University</div><div class="activity-year">January 2015 – December 2018</div></div></div>
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">3rd Position — Programming Contest, DIU Internal</div><div class="activity-year">2017</div></div></div>
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">Winner — Chess Club, DIU</div><div class="activity-year">2017</div></div></div>
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">Member — Blood Donation Community, DIU</div><div class="activity-year">2015 – Present</div></div></div>
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">Team Leader — DIU Charity Collection for Flood-Affected Communities</div><div class="activity-year">2017</div></div></div>
+    <div class="activity-item fade-up"><div class="activity-dot"></div><div><div class="activity-text">Vice President — Cumilla Students' Association at DIU</div><div class="activity-year">2018</div></div></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-header fade-up">
+    <div class="section-label">Thoughts & Writing</div>
+    <div class="section-title">Blog</div>
+  </div>
+  <div class="blog-card fade-up">
+    <div class="blog-img-area">
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+      <span>Add photo here</span>
+    </div>
+    <div class="blog-body">
+      <div class="blog-tag">Community · Health</div>
+      <div class="blog-title">Blood Donation</div>
+      <div class="blog-text">Donating blood is a simple act of kindness that can save lives. One small contribution can make a world of difference for someone in need. As members of a community, we hold the power to give the gift of life — and it costs nothing but a moment of our time.</div>
     </div>
   </div>
 </section>
@@ -736,51 +804,34 @@ footer {
   </div>
   <div class="contact-grid">
     <div class="fade-up">
-      <p class="contact-intro">
-        I am actively seeking MS and PhD opportunities in machine learning, AI security, and healthcare AI. If you are a faculty member or recruiter, I would love to connect.
-      </p>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        </div>
-        <div class="contact-text"><a href="mailto:nyem.hasan@live-security.net">nyem.hasan@live-security.net</a></div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-        </div>
-        <div class="contact-text">+880 1824039747</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <div class="contact-text">Dhaka, Bangladesh — 1205</div>
-      </div>
+      <p class="contact-intro">I am actively seeking MS and PhD opportunities in machine learning, AI security, and healthcare AI. If you are a faculty member or recruiter, I would love to connect and discuss potential collaborations.</p>
+      <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="contact-text"><a href="mailto:nyemhasan.diu@gmail.com">nyemhasan.diu@gmail.com</a></div></div>
+      <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.902.62 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.28 1.849.493 2.81.62A2 2 0 0122 14.92z"/></svg></div><div class="contact-text">+880 1824039747</div></div>
+      <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div class="contact-text">Dhaka, Bangladesh</div></div>
+      <div class="contact-item"><div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div><div class="contact-text"><a href="https://github.com/mebnhme" target="_blank">github.com/mebnhme</a></div></div>
     </div>
-    <div class="contact-form-area fade-up">
-      <label class="form-label">Your Name</label>
+    <div class="cform fade-up">
+      <label class="flabel">Your Name</label>
       <input type="text" placeholder="Prof. Jane Smith"/>
-      <label class="form-label">Email</label>
+      <label class="flabel">Email</label>
       <input type="email" placeholder="jane@university.edu"/>
-      <label class="form-label">Message</label>
+      <label class="flabel">Message</label>
       <textarea placeholder="I'd like to discuss a potential PhD position..."></textarea>
       <button class="btn-send">Send Message</button>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <span class="footer-name">Md Nyem Hasan Bhuiyan</span>
   <span class="footer-note">Actively seeking MS / PhD opportunities worldwide · 2025</span>
 </footer>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
+const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
