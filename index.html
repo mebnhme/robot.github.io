@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Md Nyem Hasan Bhuiyan — AI & ML Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#080c10;--bg2:#0e1318;--bg3:#141a22;--card:#111720;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--cyan:#00d4c8;--cyan2:#00a89e;--cyan-glow:rgba(0,212,200,0.1);--white:#ffffff;--text:#e2e8f0;--muted:#8892a4;--muted2:#5a6478;--serif:'Syne',sans-serif;--sans:'Inter',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.7;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:2px;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:56px;background:rgba(8,12,16,0.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-name{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--white);}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-links a{font-size:12px;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:20px;transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{background:var(--white);color:var(--bg);font-weight:500;}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{width:18px;height:1.5px;background:var(--muted);border-radius:2px;}
+
+.page{max-width:1100px;margin:0 auto;padding:0 40px;}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:56px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,212,200,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:260px 1fr;gap:60px;align-items:center;width:100%;}
+
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 24px;text-align:center;position:relative;overflow:hidden;}
+.profile-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);}
+.profile-img-wrap{width:160px;height:160px;border-radius:16px;margin:0 auto 16px;overflow:hidden;border:2px solid var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+.profile-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.profile-name{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--white);margin-bottom:4px;}
+.profile-title{font-size:11px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.profile-location{font-size:12px;color:var(--muted);margin-bottom:14px;}
+.open-badge{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:20px;border:1px solid rgba(0,212,200,0.3);color:var(--cyan);background:rgba(0,212,200,0.06);margin-bottom:14px;}
+.profile-social{display:flex;justify-content:center;gap:8px;margin-bottom:14px;}
+.soc-btn{width:32px;height:32px;border-radius:8px;border:1px solid var(--border2);background:var(--bg3);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all 0.2s;}
+.soc-btn:hover{border-color:var(--cyan);background:var(--cyan-glow);}
+.soc-btn svg{width:13px;height:13px;fill:none;stroke:var(--muted);stroke-width:2;transition:stroke 0.2s;}
+.soc-btn:hover svg{stroke:var(--cyan);}
+.profile-contact{font-size:11px;color:var(--muted);line-height:2.1;}
+.profile-contact a{color:var(--cyan);text-decoration:none;}
+
+.hero-eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;}
+.hero-name{font-family:var(--serif);font-size:50px;line-height:1.05;color:var(--white);font-weight:700;margin-bottom:18px;}
+.hero-name span{color:var(--cyan);}
+.hero-bio{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:12px;max-width:520px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
+.htag{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--muted);}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{font-family:var(--sans);font-size:13px;font-weight:500;padding:10px 24px;border-radius:8px;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;}
+.btn-cyan{background:var(--cyan);color:var(--bg);border:none;}
+.btn-cyan:hover{background:var(--cyan2);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+
+section{padding:80px 0;border-top:1px solid var(--border);}
+.sec-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}
+.sec-title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--white);margin-bottom:36px;line-height:1.2;}
+
+.research-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.res-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.res-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),transparent);}
+.res-period{font-size:11px;color:var(--cyan);margin-bottom:6px;}
+.res-role{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.res-topic{font-size:12px;color:var(--cyan);opacity:0.8;margin-bottom:4px;}
+.res-supervisor{font-size:12px;color:var(--muted);margin-bottom:10px;}
+.res-points{padding-left:14px;}
+.res-points li{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:3px;}
+
+.interests-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.int-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:all 0.2s;}
+.int-card:hover{border-color:var(--cyan);background:var(--cyan-glow);}
+.int-icon{font-size:20px;margin-bottom:7px;}
+.int-name{font-size:11px;color:var(--muted);font-weight:500;}
+
+.pub-list{display:flex;flex-direction:column;gap:12px;}
+.pub-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:start;transition:border-color 0.2s;}
+.pub-card:hover{border-color:var(--border2);}
+.pub-num{font-family:var(--serif);font-size:20px;color:var(--cyan);font-weight:700;line-height:1;padding-top:2px;}
+.pub-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px;line-height:1.5;}
+.pub-authors{font-size:11px;color:var(--muted2);margin-bottom:2px;}
+.pub-venue{font-size:11px;color:var(--muted);margin-bottom:3px;}
+.pub-doi{font-size:10px;color:var(--cyan);text-decoration:none;}
+.pub-doi:hover{text-decoration:underline;}
+.pub-status{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:500;white-space:nowrap;height:fit-content;}
+.s-pub{background:rgba(0,212,200,0.1);color:var(--cyan);border:1px solid rgba(0,212,200,0.2);}
+.s-rev{background:rgba(250,204,21,0.1);color:#fbbf24;border:1px solid rgba(250,204,21,0.2);}
+.s-acc{background:rgba(34,197,94,0.1);color:#4ade80;border:1px solid rgba(34,197,94,0.2);}
+.s-sub{background:rgba(168,85,247,0.1);color:#c084fc;border:1px solid rgba(168,85,247,0.2);}
+.idx{font-size:10px;color:var(--muted2);border:1px solid var(--border2);border-radius:4px;padding:1px 6px;margin-left:4px;}
+
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.skill-group{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;}
+.skill-group-title{font-size:12px;font-weight:500;color:var(--white);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border);}
+.skill-pills{display:flex;flex-wrap:wrap;gap:7px;}
+.skill-pill{font-size:11px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);color:var(--muted);transition:all 0.2s;}
+.skill-pill:hover{border-color:var(--cyan);color:var(--cyan);}
+.skill-pill.core{background:rgba(0,212,200,0.1);color:var(--cyan);border-color:rgba(0,212,200,0.25);}
+
+.timeline{position:relative;}
+.timeline-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--border2);transform:translateX(-50%);}
+.tl-item{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin-bottom:36px;align-items:start;}
+.tl-dot{width:12px;height:12px;border-radius:50%;background:var(--cyan);border:2px solid var(--bg);box-shadow:0 0 12px var(--cyan);margin:22px auto 0;}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;transition:border-color 0.2s;}
+.tl-card:hover{border-color:var(--border2);}
+.tl-period{font-size:11px;color:var(--cyan);margin-bottom:5px;}
+.tl-role{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--white);margin-bottom:2px;}
+.tl-company{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.tl-points{padding-left:14px;}
+.tl-points li{font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:3px;}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.tl-tag{font-size:10px;padding:2px 9px;border-radius:10px;border:1px solid var(--border2);color:var(--muted2);}
+
+.edu-list{display:flex;flex-direction:column;gap:14px;}
+.edu-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color 0.2s;}
+.edu-card:hover{border-color:var(--border2);}
+.edu-icon{width:38px;height:38px;border-radius:10px;background:var(--cyan-glow);border:1px solid rgba(0,212,200,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.edu-icon svg{width:17px;height:17px;stroke:var(--cyan);fill:none;stroke-width:2;}
+.edu-degree{font-size:14px;font-weight:500;color:var(--white);margin-bottom:2px;}
+.edu-school{font-size:12px;color:var(--muted);margin-bottom:2px;}
+.edu-period{font-size:11px;color:var(--cyan);margin-bottom:2px;}
+.edu-cgpa{font-size:11px;color:var(--muted2);}
+.edu-thesis{font-size:11px;color:var(--muted2);font-style:italic;margin-top:3px;}
+
+.training-list{display:flex;flex-direction:column;gap:12px;}
+.train-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;transition:border-color 0.2s;}
+.train-card:hover{border-color:var(--border2);}
+.train-year{font-family:var(--serif);font-size:18px;color:var(--cyan);font-weight:700;min-width:36px;padding-top:2px;}
+.train-title{font-size:13px;font-weight:500;color:var(--white);margin-bottom:2px;}
+.train-org{font-size:11px;color:var(--muted);margin-bottom:3px;}
+.train-period{font-size:10px;color:var(--cyan);margin-bottom:5px;}
+.train-points{padding-left:14px;}
+.train-points li{font-size:11px;color:var(--muted);line-height:1.65;margin-bottom:2px;}
+.cert-link{font-size:11px;color:var(--cyan);text-decoration:none;margin-top:8px;display:inline-block;}
+.cert-link:hover{text-decoration:underline;}
+
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.blog-card:hover{border-color:var(--border2);transform:translateY(-2px);}
+.blog-top{height:110px;background:linear-gradient(135deg,var(--bg3) 0%,rgba(0,212,200,0.07) 100%);display:flex;align-items:center;justify-content:center;}
+.blog-top svg{width:34px;height:34px;stroke:var(--cyan);fill:none;stroke-width:1.5;opacity:0.45;}
+.blog-body{padding:18px 20px;}
+.blog-tag{font-size:10px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+.blog-title{font-family:var(--serif);font-size:17px;color:var(--white);margin-bottom:8px;font-weight:600;}
+.blog-text{font-size:12px;color:var(--muted);line-height:1.8;}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.contact-intro{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:22px;}
+.contact-item{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.c-icon{width:32px;height:32px;border-radius:8px;background:var(--cyan-glow);border:1px solid rgba(0,212,200,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.c-icon svg{width:14px;height:14px;stroke:var(--cyan);fill:none;stroke-width:2;}
+.c-text{font-size:13px;color:var(--muted);}
+.c-text a{color:var(--cyan);text-decoration:none;}
+.cform{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px;}
+.flabel{font-size:11px;color:var(--muted2);margin-bottom:5px;display:block;}
+.cform input,.cform textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:9px 12px;color:var(--text);font-family:var(--sans);font-size:13px;margin-bottom:12px;outline:none;transition:border-color 0.2s;}
+.cform input:focus,.cform textarea:focus{border-color:var(--cyan);}
+.cform textarea{height:88px;resize:none;}
+.btn-send{width:100%;background:var(--cyan);color:var(--bg);border:none;border-radius:8px;padding:10px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:background 0.2s;}
+.btn-send:hover{background:var(--cyan2);}
+
+footer{border-top:1px solid var(--border);padding:22px 0;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.footer-name{font-family:var(--serif);font-size:14px;color:var(--muted2);}
+.footer-note{font-size:11px;color:var(--muted2);}
+
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.visible{opacity:1;transform:none;}
+
+@media(max-width:860px){
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--bg2);padding:14px 20px;border-bottom:1px solid var(--border);gap:8px;}
+  .hamburger{display:flex;}
+  .page{padding:0 20px;}
+  .hero-grid{grid-template-columns:1fr;gap:28px;padding-top:16px;}
+  .hero-name{font-size:34px;}
+  .research-grid,.skills-grid,.contact-grid,.blog-grid,.interests-grid{grid-template-columns:1fr;}
+  .timeline-line{display:none;}
+  .tl-item{grid-template-columns:1fr;}
+  .tl-item .tl-center{display:none;}
+  .pub-card{grid-template-columns:32px 1fr;}
+  .pub-status{grid-column:2;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Nyem Hasan</span>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" class="active">About</a>
+    <a href="#research">Research</a>
+    <a href="#interests">Interests</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#training">Training</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="hero" id="about">
+  <div class="page" style="width:100%;">
+    <div class="hero-grid">
+      <div class="profile-card fade-up">
+        <div class="profile-img-wrap">
+          <img src="https://raw.githubusercontent.com/hasannyem/nyemhasan.github.io/main/ProfilePhoto.jpg" alt="Md Nyem Hasan Bhuiyan"/>
+        </div>
+        <div class="profile-name">Md Nyem Hasan Bhuiyan</div>
+        <div class="profile-title">AI & ML Researcher</div>
+        <div class="profile-location">Dhaka, Bangladesh</div>
+        <div class="open-badge">Open to MS / PhD Positions</div>
+        <div class="profile-social">
+          <a href="#" class="soc-btn" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="#" class="soc-btn" title="Google Scholar">
+            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+          </a>
+          <a href="https://github.com/hasannyem" class="soc-btn" title="GitHub" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </a>
+          <a href="mailto:nyemhasan.diu@gmail.com" class="soc-btn" title="Email">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <div class="profile-contact">
+          <a href="mailto:nyemhasan.diu@gmail.com">nyemhasan.diu@gmail.com</a><br/>
+          +880 1824039747<br/>
+          1212, Dhaka, Bangladesh
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <div class="hero-eyebrow">AI · Machine Learning · Research</div>
+        <h1 class="hero-name">Md Nyem<br/><span>Hasan</span> Bhuiyan</h1>
+        <p class="hero-bio">Hi Everyone, I am an AI &amp; Machine Learning Engineer and Full Stack Web Developer with a strong foundation in Python, Data Structures, Algorithms, and Statistics. I focus on building intelligent systems that solve real-world problems while continuously strengthening my core computer science fundamentals.</p>
+        <p class="hero-bio">I have hands-on experience in Machine Learning, NLP, Deep Learning, and Computer Vision using Scikit-learn, TensorFlow, OpenCV, Pandas, and NumPy. From data preprocessing and feature engineering to model training and deployment, I enjoy working on complete end-to-end AI solutions.</p>
+        <div class="hero-tags">
+          <span class="htag">GNN Security</span>
+          <span class="htag">Healthcare AI</span>
+          <span class="htag">Federated Learning</span>
+          <span class="htag">NLP &amp; Transformers</span>
+          <span class="htag">Computer Vision</span>
+          <span class="htag">8 Publications</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-cyan">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download CV
+          </a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="research">
+  <div class="page">
+    <div class="sec-label fade-up">International Collaborations</div>
+    <div class="sec-title fade-up">Research Experience</div>
+    <div class="research-grid">
+      <div class="res-card fade-up">
+        <div class="res-period">July 2025 – Present</div>
+        <div class="res-role">Research Collaborator</div>
+        <div class="res-topic">Graph Neural Network Security</div>
+        <div class="res-supervisor">Prof. Yushun Dong · Florida State University, USA</div>
+        <ul class="res-points">
+          <li>Empirically evaluated eight node selection strategies for GNN fingerprinting under combined pruning and fine-tuning attacks</li>
+          <li>Identified uncertainty-based selection as the most robust strategy across citation and social network datasets</li>
+        </ul>
+      </div>
+      <div class="res-card fade-up">
+        <div class="res-period">December 2024 – Present</div>
+        <div class="res-role">Research Collaborator</div>
+        <div class="res-topic">Healthcare AI &amp; Medical Machine Learning</div>
+        <div class="res-supervisor">Prof. Naveed Anwer Butt · University of Gujrat, Pakistan</div>
+        <ul class="res-points">
+          <li>Knee Osteoarthritis prediction using ML — submitted to Scientific Reports and Data Mining journals</li>
+          <li>GNN-based multi-source learning for liver cancer data integration (ongoing)</li>
+        </ul>
+      </div>
+      <div class="res-card fade-up">
+        <div class="res-period">January 2024 – October 2024</div>
+        <div class="res-role">Research Assistant (RA)</div>
+        <div class="res-topic">ML for Clinical Prediction</div>
+        <div class="res-supervisor">Southeast University, Bangladesh</div>
+        <ul class="res-points">
+          <li>Developed a stacking ensemble model combining Random Forest, Decision Tree, and LightGBM for chronic kidney cancer prediction</li>
+          <li>Applied collaborative feature selection and evaluated models across precision, recall, and F1 score</li>
+        </ul>
+      </div>
+      <div class="res-card fade-up">
+        <div class="res-period">February 2025 – May 2025</div>
+        <div class="res-role">Research Intern</div>
+        <div class="res-topic">Explainable AI &amp; Deep Learning</div>
+        <div class="res-supervisor"><a href="https://www.neuralresearchbd.com/" target="_blank" style="color:var(--cyan);text-decoration:none;">Neural Research</a> · Dhaka, Bangladesh</div>
+        <ul class="res-points">
+          <li>Trained in advanced ML and XAI tools including SHAP, LIME, Grad-CAM</li>
+          <li>Built interpretable ML/DL models for real-world research problems</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="page">
+    <div class="sec-label fade-up">Focus Areas</div>
+    <div class="sec-title fade-up">Research Interests</div>
+    <div class="interests-grid">
+      <div class="int-card fade-up"><div class="int-icon">🤖</div><div class="int-name">Machine Learning</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🧠</div><div class="int-name">Deep Learning</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🔒</div><div class="int-name">ML Security &amp; Robustness</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🏥</div><div class="int-name">Healthcare AI</div></div>
+      <div class="int-card fade-up"><div class="int-icon">💬</div><div class="int-name">NLP</div></div>
+      <div class="int-card fade-up"><div class="int-icon">👁️</div><div class="int-name">Computer Vision</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🔗</div><div class="int-name">Graph Neural Networks</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🛡️</div><div class="int-name">Privacy-Preserving ML</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🌐</div><div class="int-name">Federated Learning</div></div>
+      <div class="int-card fade-up"><div class="int-icon">📡</div><div class="int-name">Internet of Things</div></div>
+      <div class="int-card fade-up"><div class="int-icon">🖥️</div><div class="int-name">Human-Computer Interaction</div></div>
+      <div class="int-card fade-up"><div class="int-icon">📊</div><div class="int-name">Data Science</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="page">
+    <div class="sec-label fade-up">Scholarly Output</div>
+    <div class="sec-title fade-up">Publications <span style="font-family:var(--sans);font-size:15px;color:var(--muted);font-weight:300;">8 papers</span></div>
+    <div class="pub-list">
+      <div class="pub-card fade-up">
+        <div class="pub-num">1</div>
+        <div>
+          <div class="pub-title">A Feature Selection-Based Ensemble Machine Learning Method for Predicting Chronic Kidney Cancer</div>
+          <div class="pub-authors">MTA Bhuiyan, Md. Nyem Hasan Bhuiyan, Uddin K.M.M., MA Based</div>
+          <div class="pub-venue">3rd IEEE BECITHCON, pp. 193–199, 2024 <span class="idx">IEEE</span></div>
+          <a href="https://doi.org/10.1109/BECITHCON64160.2024.10962730" class="pub-doi" target="_blank">DOI: 10.1109/BECITHCON64160.2024.10962730 ↗</a>
+        </div>
+        <span class="pub-status s-pub">Published</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">2</div>
+        <div>
+          <div class="pub-title">Predicting Gender from Twitter Text Messages Using Artificial Intelligence and Text Analysis Methods</div>
+          <div class="pub-authors">Md. Nyem Hasan Bhuiyan, Rahman A.</div>
+          <div class="pub-venue">Journal of Artificial Intelligence and System Modelling, Pages 91–106, 2025</div>
+          <a href="https://doi.org/10.22034/JAISM2025.508831.1110" class="pub-doi" target="_blank">DOI: 10.22034/JAISM2025.508831.1110 ↗</a>
+        </div>
+        <span class="pub-status s-pub">Published</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">3</div>
+        <div>
+          <div class="pub-title">Statistical Modeling of Health Inequities: A Multivariate Regression Approach to Social Determinants of Public Health</div>
+          <div class="pub-authors">S. Sayem, Md. Nyem Hasan Bhuiyan, N.A. Sayed, A.D. Nath</div>
+          <div class="pub-venue">Al-Kindy College Medical Journal</div>
+          <a href="https://doi.org/10.47723/VZKBQ424" class="pub-doi" target="_blank">DOI: 10.47723/VZKBQ424 ↗</a>
+        </div>
+        <span class="pub-status s-pub">Published</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">4</div>
+        <div>
+          <div class="pub-title">Advancing Healthcare: Machine Learning-Based Prediction of Disc Hernia Risk for Personalized Intervention</div>
+          <div class="pub-authors">Md. Nyem Hasan Bhuiyan, Rahman A.</div>
+          <div class="pub-venue">Journal of Artificial Intelligence and System Modelling, Pages 100–113, 2026</div>
+          <a href="https://doi.org/10.22034/jaism.2026.574887.1181" class="pub-doi" target="_blank">DOI: 10.22034/jaism.2026.574887.1181 ↗</a>
+        </div>
+        <span class="pub-status s-pub">Published</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">5</div>
+        <div>
+          <div class="pub-title">A Hybrid CNN-Transformer Architecture for Interpretable Knee Osteoarthritis Diagnosis</div>
+          <div class="pub-authors">RMZU Abideen, Md Nyem Hasan Bhuiyan, NA Butt, I. Ashraf, D. Gavilanes, MM Vergara</div>
+          <div class="pub-venue">Scientific Reports <span class="idx">SCOPUS</span> · Publisher: BioMed Central (Springer Nature)</div>
+        </div>
+        <span class="pub-status s-rev">Under Review</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">6</div>
+        <div>
+          <div class="pub-title">Diagnosis of Cattle (Cow) Lumpy Skin Disease Using Convolutional Neural Networks</div>
+          <div class="pub-authors">S. Sayem, SHM Ratul, Md. Nyem Hasan Bhuiyan, AA Zabir, MAA Sarkar et al.</div>
+          <div class="pub-venue">Egyptian Journal of Veterinary Sciences <span class="idx">SCOPUS</span> · Publisher: NIDOC</div>
+          <a href="https://raw.githubusercontent.com/hasannyem/nyemhasan.github.io/main/Cow%20Lumpy%20Skin.pdf" class="pub-doi" target="_blank">Submission Proof ↗</a>
+        </div>
+        <span class="pub-status s-acc">Accepted</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">7</div>
+        <div>
+          <div class="pub-title">Multi-Modal Transformer Architecture for Cancer Drug Response Prediction Using Integrated Omics Data</div>
+          <div class="pub-authors">RMZU Abideen, Md Nyem Hasan Bhuiyan, R. Latif, A. Rahman, A. Abbas, IF Siddiqui</div>
+          <div class="pub-venue">Journal of Computer-Aided Molecular Design <span class="idx">SCOPUS</span> · Publisher: Springer</div>
+        </div>
+        <span class="pub-status s-sub">Submitted</span>
+      </div>
+      <div class="pub-card fade-up">
+        <div class="pub-num">8</div>
+        <div>
+          <div class="pub-title">Few-Shot Learning for Accurate Detection of Severe Osteoarthritis Using Limited Knee Radiographs</div>
+          <div class="pub-authors">Md Nyem Hasan Bhuiyan, RMZU Abideen, NA Butt, I. Ashraf</div>
+          <div class="pub-venue">Scientific Reports <span class="idx">SCOPUS</span> · Publisher: BioMed Central (Springer Nature)</div>
+        </div>
+        <span class="pub-status s-sub">Submitted</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="page">
+    <div class="sec-label fade-up">Technical Expertise</div>
+    <div class="sec-title fade-up">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Languages &amp; Tools</div>
+        <div class="skill-pills">
+          <span class="skill-pill core">Python</span><span class="skill-pill core">PyTorch</span><span class="skill-pill core">TensorFlow</span>
+          <span class="skill-pill">C++</span><span class="skill-pill">C#</span><span class="skill-pill">HTML / CSS</span>
+          <span class="skill-pill">jQuery</span><span class="skill-pill">Git</span><span class="skill-pill">Streamlit</span>
+          <span class="skill-pill">MS SQL Server</span><span class="skill-pill">Visual Studio</span>
+        </div>
+      </div>
+      <div class="skill-group fade-up">
+        <div class="skill-group-title">Libraries &amp; Frameworks</div>
+        <div class="skill-pills">
+          <span class="skill-pill core">PyTorch Geometric</span><span class="skill-pill core">Scikit-learn</span>
+          <span class="skill-pill">Keras</span><span class="skill-pill">LightGBM</span><span class="skill-pill">Transformers</span>
+          <span class="skill-pill">OpenCV</span><span class="skill-pill">Pandas</span><span class="skill-pill">NumPy</span>
+          <span class="skill-pill">NLTK</span><span class="skill-pill">SHAP / LIME</span><span class="skill-pill">Grad-CAM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="page">
+    <div class="sec-label fade-up">Career</div>
+    <div class="sec-title fade-up">Professional Experience</div>
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="tl-item fade-up">
+        <div class="tl-card">
+          <div class="tl-period">November 2024 – Present</div>
+          <div class="tl-role">Senior Support Engineer</div>
+          <div class="tl-company">Live Security System · Dhaka, Bangladesh</div>
+          <ul class="tl-points">
+            <li>Managed and preprocessed large-scale security system datasets, supporting ML pipelines and analytics workflows</li>
+            <li>Built monitoring dashboards and delivered structured logs to data teams for model development</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">ML Pipelines</span><span class="tl-tag">Data Analytics</span></div>
+        </div>
+        <div class="tl-center" style="position:relative;"><div class="tl-dot"></div></div>
+        <div></div>
+      </div>
+      <div class="tl-item fade-up">
+        <div></div>
+        <div class="tl-center" style="position:relative;"><div class="tl-dot"></div></div>
+        <div class="tl-card">
+          <div class="tl-period">January 2021 – December 2023</div>
+          <div class="tl-role">Junior Software Developer</div>
+          <div class="tl-company">Mega-Soft Solution BD · Dhaka, Bangladesh</div>
+          <ul class="tl-points">
+            <li>Developed software solutions across the full stack for multiple clients</li>
+            <li>Contributed to product development cycles and technical documentation</li>
+            <li>Collaborated with cross-functional teams on project delivery</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Full Stack</span><span class="tl-tag">C#</span><span class="tl-tag">SQL</span></div>
+        </div>
+      </div>
+      <div class="tl-item fade-up">
+        <div class="tl-card">
+          <div class="tl-period">January 2019 – March 2020</div>
+          <div class="tl-role">Internship</div>
+          <div class="tl-company">N.R. Group Corporate Office · Dhaka, Bangladesh</div>
+          <ul class="tl-points">
+            <li>Supported IT operations and system maintenance tasks</li>
+            <li>Assisted with data management, reporting, and system monitoring</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">IT Operations</span><span class="tl-tag">Data Management</span></div>
+        </div>
+        <div class="tl-center" style="position:relative;"><div class="tl-dot"></div></div>
+        <div></div>
+      </div>
+      <div class="tl-item fade-up">
+        <div></div>
+        <div class="tl-center" style="position:relative;"><div class="tl-dot"></div></div>
+        <div class="tl-card">
+          <div class="tl-period">June 2014 – December 2018</div>
+          <div class="tl-role">Teacher</div>
+          <div class="tl-company">EdCam Education · Gulshan, Dhaka, Bangladesh</div>
+          <ul class="tl-points">
+            <li>Taught Mathematics and ICT to O- and A-level students</li>
+            <li>Prepared question papers and reviewed answer scripts with constructive feedback</li>
+            <li>Mentored students and tracked academic progress through regular assessments</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Mathematics</span><span class="tl-tag">ICT</span><span class="tl-tag">Mentoring</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="page">
+    <div class="sec-label fade-up">Academic Background</div>
+    <div class="sec-title fade-up">Education</div>
+    <div class="edu-list">
+      <div class="edu-card fade-up">
+        <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div>
+          <div class="edu-degree">Bachelor of Science in Computer Science &amp; Engineering</div>
+          <div class="edu-school">Dhaka International University (DIU) · Dhaka, Bangladesh</div>
+          <div class="edu-period">2015 – 2018</div>
+          <div class="edu-cgpa">CGPA: 3.70 / 4.00</div>
+          <div class="edu-thesis">Thesis: Department Management System — A Smart Approach to University Administration</div>
+        </div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+        <div>
+          <div class="edu-degree">Diploma in Computer Engineering</div>
+          <div class="edu-school">CCN Polytechnic Institute · Bangladesh</div>
+          <div class="edu-period">2009 – 2014</div>
+          <div class="edu-cgpa">CGPA: 3.45 / 4.00</div>
+        </div>
+      </div>
+      <div class="edu-card fade-up">
+        <div class="edu-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div>
+          <div class="edu-degree">Secondary School Certificate (SSC) — Science Group</div>
+          <div class="edu-school">Elahabad High School · Comilla, Bangladesh</div>
+          <div class="edu-period">2007 – 2009</div>
+          <div class="edu-cgpa">CGPA: 3.94 / 5.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="training">
+  <div class="page">
+    <div class="sec-label fade-up">Certifications &amp; Courses</div>
+    <div class="sec-title fade-up">Training</div>
+    <div class="training-list">
+      <div class="train-card fade-up">
+        <div class="train-year">2024</div>
+        <div>
+          <div class="train-title">Data Science &amp; Machine Learning with Python &amp; R</div>
+          <div class="train-org">Data Solution 360 · Dhaka, Bangladesh · ID: DS3602503MNHB08</div>
+          <div class="train-period">September 2024 – February 2025</div>
+          <ul class="train-points">
+            <li>Statistical analysis, EDA, data cleaning and visualisation in Python and R</li>
+            <li>Applied supervised and unsupervised machine learning techniques</li>
+            <li>Completed end-to-end data science and machine learning projects</li>
+          </ul>
+          <a href="YOUR_GOOGLE_DRIVE_CERTIFICATE_LINK_HERE" target="_blank" class="cert-link">View Certificate ↗</a>
+        </div>
+      </div>
+      <div class="train-card fade-up">
+        <div class="train-year">2025</div>
+        <div>
+          <div class="train-title">Deep Learning &amp; Generative AI with Python</div>
+          <div class="train-org">AI Quest Intelligence &amp; Study Mart · Dhaka, Bangladesh</div>
+          <div class="train-period">February 2025 – October 2025</div>
+          <ul class="train-points">
+            <li>Deep Learning architectures &amp; optimisation · Advanced NLP with Transformers</li>
+            <li>Generative AI &amp; LLM optimisation · Computer Vision with GANs &amp; Object Detection</li>
+            <li>LLM Enhancement &amp; Alignment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="page">
+    <div class="sec-label fade-up">Thoughts &amp; Writing</div>
+    <div class="sec-title fade-up">Blog</div>
+    <div class="blog-grid">
+      <div class="blog-card fade-up">
+        <div class="blog-top">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">Community · Health</div>
+          <div class="blog-title">Blood Donation</div>
+          <div class="blog-text">Donating blood is a simple act of kindness that can save lives. One small contribution can make a world of difference for someone in need.</div>
+        </div>
+      </div>
+      <div class="blog-card fade-up">
+        <div class="blog-top">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="blog-body">
+          <div class="blog-tag">Life · Reflection</div>
+          <div class="blog-title">Small Moments</div>
+          <div class="blog-text">We sometimes miss the simple beauty of small moments in our everyday lives. Understanding ourselves means accepting our strengths and weaknesses — that makes us who we are.<br/><br/><em>Never waste your food. Never hurt anyone.</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="page">
+    <div class="sec-label fade-up">Let's Connect</div>
+    <div class="sec-title fade-up">Contact</div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="contact-intro">I am actively seeking MS and PhD opportunities in machine learning, AI security, and healthcare AI. If you are a faculty member or recruiter, I would love to connect and discuss potential collaborations.</p>
+        <div class="contact-item">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="c-text"><a href="mailto:nyemhasan.diu@gmail.com">nyemhasan.diu@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.128.96.341 1.902.62 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.28 1.849.493 2.81.62A2 2 0 0122 14.92z"/></svg></div>
+          <div class="c-text">+880 1824039747</div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="c-text">1212, Dhaka, Bangladesh</div>
+        </div>
+        <div class="contact-item">
+          <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
+          <div class="c-text"><a href="https://github.com/hasannyem" target="_blank">github.com/hasannyem</a></div>
+        </div>
+      </div>
+      <div class="cform fade-up">
+        <label class="flabel">Your Name</label>
+        <input type="text" placeholder="Prof. Jane Smith"/>
+        <label class="flabel">Email</label>
+        <input type="email" placeholder="jane@university.edu"/>
+        <label class="flabel">Message</label>
+        <textarea placeholder="I'd like to discuss a potential PhD position..."></textarea>
+        <button class="btn-send">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="footer-inner">
+      <span class="footer-name">Md Nyem Hasan Bhuiyan</span>
+      <span class="footer-note">Actively seeking MS / PhD opportunities worldwide · 2025</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible');});},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+const links=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+  let cur='about';
+  document.querySelectorAll('section,[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-80&&s.id)cur=s.id;});
+  links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+});
+</script>
+</body>
+</html>
