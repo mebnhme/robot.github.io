@@ -1,0 +1,342 @@
+{
+  "profile": {
+    "name": "Md Nyem Hasan Bhuiyan",
+    "short_name": "Nyem Hasan",
+    "title": "AI & ML Researcher",
+    "eyebrow": "AI · Machine Learning · Research",
+    "location": "Dhaka, Bangladesh",
+    "badge": "Open to MS / PhD Positions",
+    "photo": "ProfilePhoto.jpg",
+    "bio": [
+      "Hi Everyone, I am an AI & Machine Learning Engineer with a strong foundation in Python, Data Structures, Algorithms, and Statistics. I focus on building intelligent systems that solve real-world problems while continuously strengthening my core computer science fundamentals.",
+      "I have hands-on experience in Machine Learning, NLP, Deep Learning, and Computer Vision using Scikit-learn, TensorFlow, OpenCV, Pandas, and NumPy. From data preprocessing and feature engineering to model training and deployment, I enjoy working on complete end-to-end AI solutions."
+    ],
+    "tags": ["GNN Security", "Healthcare AI", "Federated Learning", "NLP & Transformers", "Computer Vision"],
+    "cv_url": "https://drive.google.com/file/d/1nGpj2tLpSjaiv2CaaVQXqfW9qbX7imsX/view?usp=sharing",
+    "email": "nyemhasan.diu@gmail.com",
+    "phone": "+880 1824039747",
+    "address": "1212, Dhaka, Bangladesh",
+    "linkedin": "https://www.linkedin.com/in/md-nyem-hasan-bhuiyan-80162433a",
+    "scholar": "https://scholar.google.com/citations?hl=en&user=Sbu4y_sAAAAJ&view_op=list_works&authuser=1&gmla=AH8HC4wJJ6Vm_LhU_nUtv6cHvPGHuOduHOLNzxXun6zAFQlYaBYoTwjpxg_PEACd8SkYj_9o-zu73h7CjY2q7ZJ0",
+    "github": "https://github.com/hasannyem",
+    "contact_intro": "I am actively seeking MS and PhD opportunities in machine learning, AI security, and healthcare AI. If you are a faculty member or recruiter, I would love to connect and discuss potential collaborations.",
+    "footer_note": "Actively seeking MS / PhD opportunities worldwide"
+  },
+  "news": [],
+  "research": [
+    {
+      "period": "July 2025 – Present",
+      "role": "Research Collaborator",
+      "topic": "Graph Neural Network Security",
+      "supervisor": "Prof. Yushun Dong · Florida State University, USA",
+      "supervisor_url": "",
+      "points": [
+        "Empirically evaluated eight node selection strategies for GNN fingerprinting under combined pruning and fine-tuning attacks",
+        "Identified uncertainty-based selection as the most robust strategy across citation and social network datasets"
+      ],
+      "cert_url": ""
+    },
+    {
+      "period": "December 2024 – Present",
+      "role": "Research Collaborator",
+      "topic": "Healthcare AI & Medical Machine Learning",
+      "supervisor": "Prof. Naveed Anwer Butt · University of Gujrat, Pakistan",
+      "supervisor_url": "",
+      "points": [
+        "Knee Osteoarthritis prediction using ML — submitted to Scientific Reports and Data Mining journals",
+        "GNN-based multi-source learning for liver cancer data integration (ongoing)"
+      ],
+      "cert_url": ""
+    },
+    {
+      "period": "January 2024 – October 2024",
+      "role": "Research Assistant (RA)",
+      "topic": "ML for Clinical Prediction",
+      "supervisor": "Southeast University, Bangladesh",
+      "supervisor_url": "",
+      "points": [
+        "Developed a stacking ensemble model combining Random Forest, Decision Tree, and LightGBM for chronic kidney cancer prediction",
+        "Applied collaborative feature selection and evaluated models across precision, recall, and F1 score"
+      ],
+      "cert_url": ""
+    },
+    {
+      "period": "February 2025 – May 2025",
+      "role": "Research Intern",
+      "topic": "Explainable AI & Deep Learning",
+      "supervisor": "Neural Research · Dhaka, Bangladesh",
+      "supervisor_url": "https://www.neuralresearchbd.com/",
+      "points": [
+        "Trained in advanced ML and XAI tools including SHAP, LIME, Grad-CAM",
+        "Built interpretable ML/DL models for real-world research problems"
+      ],
+      "cert_url": "https://drive.google.com/file/d/1klRiWy-6Un120uhKAhMmzosJNCZUDCV2/view?usp=sharing"
+    }
+  ],
+  "interests": [
+    { "icon": "🤖", "name": "Machine Learning" },
+    { "icon": "🧠", "name": "Deep Learning" },
+    { "icon": "🔒", "name": "ML Security & Robustness" },
+    { "icon": "🏥", "name": "Healthcare AI" },
+    { "icon": "💬", "name": "NLP" },
+    { "icon": "👁️", "name": "Computer Vision" },
+    { "icon": "🔗", "name": "Graph Neural Networks" },
+    { "icon": "🛡️", "name": "Privacy-Preserving ML" },
+    { "icon": "🌐", "name": "Federated Learning" },
+    { "icon": "📡", "name": "Internet of Things" },
+    { "icon": "🖥️", "name": "Human-Computer Interaction" },
+    { "icon": "📊", "name": "Data Science" }
+  ],
+  "publications": [
+    {
+      "title": "A Feature Selection-Based Ensemble Machine Learning Method for Predicting Chronic Kidney Cancer",
+      "authors": "MTA Bhuiyan, Md. Nyem Hasan Bhuiyan, Uddin K.M.M., MA Based",
+      "venue": "3rd IEEE BECITHCON, pp. 193–199, 2024",
+      "index_tag": "IEEE",
+      "publisher": "",
+      "doi": "10.1109/BECITHCON64160.2024.10962730",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "Fine-Tuned MobileNetV2 for Multi-Fruit Ripeness Classification Using Deep Transfer Learning",
+      "authors": "M. S. Rahman, R. H. Ovik, S. S. Khan, A. K. M. B. Haque, S. D. Gupta, and Md Nyem Hasan Bhuiyan",
+      "venue": "International Conference on Intelligent Data Analysis and Applications (IDAA 2025)",
+      "index_tag": "Springer Nature",
+      "publisher": "",
+      "doi": "10.2991/978-94-6239-664-7_54",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "Predicting Gender from Twitter Text Messages Using Artificial Intelligence and Text Analysis Methods",
+      "authors": "Md. Nyem Hasan Bhuiyan, Rahman A.",
+      "venue": "Journal of Artificial Intelligence and System Modelling, Pages 91–106, 2025",
+      "index_tag": "",
+      "publisher": "",
+      "doi": "10.22034/jaism.2025.508831.1110",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "Statistical Modeling of Health Inequities: A Multivariate Regression Approach to Social Determinants of Public Health",
+      "authors": "S. Sayem, Md. Nyem Hasan Bhuiyan, N.A. Sayed, A.D. Nath",
+      "venue": "Al-Kindy College Medical Journal",
+      "index_tag": "",
+      "publisher": "",
+      "doi": "10.47723/VZKBQ424",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "Advancing Healthcare: Machine Learning-Based Prediction of Disc Hernia Risk for Personalized Intervention",
+      "authors": "Md. Nyem Hasan Bhuiyan, Rahman A.",
+      "venue": "Journal of Artificial Intelligence and System Modelling, Pages 100–113, 2026",
+      "index_tag": "",
+      "publisher": "",
+      "doi": "10.22034/jaism.2026.574887.1181",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "A Hybrid CNN-Transformer Architecture for Interpretable Knee Osteoarthritis Diagnosis",
+      "authors": "RMZU Abideen, Md Nyem Hasan Bhuiyan, NA Butt, I. Ashraf, D. Gavilanes, MM Vergara",
+      "venue": "Scientific Reports",
+      "index_tag": "SCOPUS",
+      "publisher": "BioMed Central (Springer Nature)",
+      "doi": "",
+      "proof_url": "https://drive.google.com/file/d/1teGh6Fql1qCq0pVR-NmcDHT8bXoFTP01/view?usp=sharing",
+      "status": "under_review"
+    },
+    {
+      "title": "Diagnosis of Cattle (Cow) Lumpy Skin Disease Using Convolutional Neural Networks",
+      "authors": "S. Sayem, SHM Ratul, Md. Nyem Hasan Bhuiyan, AA Zabir, MAA Sarkar et al.",
+      "venue": "Egyptian Journal of Veterinary Sciences",
+      "index_tag": "SCOPUS",
+      "publisher": "NIDOC",
+      "doi": "10.21608/ejvs.2026.469937.3491",
+      "proof_url": "",
+      "status": "published"
+    },
+    {
+      "title": "Multi-Modal Transformer Architecture for Cancer Drug Response Prediction Using Integrated Omics Data",
+      "authors": "RMZU Abideen, Md Nyem Hasan Bhuiyan, R. Latif, A. Rahman, A. Abbas, IF Siddiqui",
+      "venue": "Journal of Computer-Aided Molecular Design",
+      "index_tag": "SCOPUS",
+      "publisher": "Springer",
+      "doi": "",
+      "proof_url": "https://drive.google.com/file/d/1MYiyNejrJVS4ZkNJsUypHQ94JGheyZVK/view?usp=sharing",
+      "status": "submitted"
+    },
+    {
+      "title": "Few-Shot Learning for Accurate Detection of Severe Osteoarthritis Using Limited Knee Radiographs",
+      "authors": "RMZU Abideen, Md Nyem Hasan Bhuiyan, NA Butt, I. Ashraf, D. Gavilanes, MM Vergara",
+      "venue": "BMC Musculoskeletal Disorders",
+      "index_tag": "SCOPUS",
+      "publisher": "Springer Nature",
+      "doi": "",
+      "proof_url": "https://drive.google.com/file/d/1tLv49yp_xhIZwlmdR3UCxeM8xZCyaEj6/view?usp=sharing",
+      "status": "submitted"
+    },
+    {
+      "title": "Graph Neural Network-Based Cross-Modality Transfer for Liver Cancer Classification across Heterogeneous CT and MRI Imaging Domains",
+      "authors": "Md Nyem Hasan Bhuiyan; Rana Muhammad Zain Ul Abideen; Naveed Anwer Butt; Imran Ashraf; Hassan Rauf; Thania Candelaria Chio Montero; Henry Fabian Gongora; Isabel de la Torre Diez",
+      "venue": "Diagnostic and Interventional Imaging",
+      "index_tag": "SCOPUS",
+      "publisher": "Elsevier",
+      "doi": "",
+      "proof_url": "https://drive.google.com/file/d/1ZiFP9tbJUUyYLrDmyxKX7J0E0lVWem8J/view?usp=sharing",
+      "status": "submitted"
+    },
+    {
+      "title": "U-PINN: A Physics-Informed Neural Network for Underwater Image Enhancement via Differentiable Optical Modeling",
+      "authors": "S. Rifat, R. Rubaiya, I. Farhana, Md Nyem Hasan Bhuiyan, and M. Mujahid",
+      "venue": "2nd International Conference on Advances in Computing, Communication, Electrical, and Smart Systems (iCACCESS 2026)",
+      "index_tag": "",
+      "publisher": "",
+      "doi": "",
+      "proof_url": "https://drive.google.com/file/d/1uK-nb2VNLlrG0pIXWHcWoZuZQ_yDZ6j6/view?usp=sharing",
+      "status": "submitted"
+    },
+    {
+      "title": "Privacy-Preserving Federated Learning for Alzheimer's Disease Detection Using Clinical Features",
+      "authors": "Md Nyem Hasan Bhuiyan, RMZU Abideen, NA Butt, I. Ashraf",
+      "venue": "",
+      "index_tag": "",
+      "publisher": "",
+      "doi": "",
+      "proof_url": "",
+      "status": "in_preparation"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Languages & Tools",
+      "items": ["*Python", "*PyTorch", "*TensorFlow", "C++", "C#", "HTML / CSS", "jQuery", "Git", "Streamlit", "MS SQL Server", "Visual Studio"]
+    },
+    {
+      "title": "Libraries & Frameworks",
+      "items": ["*PyTorch Geometric", "*Scikit-learn", "Keras", "LightGBM", "Transformers", "OpenCV", "Pandas", "NumPy", "NLTK", "SHAP / LIME", "Grad-CAM"]
+    }
+  ],
+  "experience": [
+    {
+      "period": "November 2024 – Present",
+      "role": "Senior Support Engineer",
+      "company": "Live Security System · Dhaka, Bangladesh",
+      "points": [
+        "Managed and preprocessed large-scale security system datasets, supporting ML pipelines and analytics workflows",
+        "Built monitoring dashboards and delivered structured logs to data teams for model development"
+      ],
+      "tags": ["ML Pipelines", "Data Analytics"]
+    },
+    {
+      "period": "January 2021 – December 2023",
+      "role": "Junior Software Developer",
+      "company": "Mega-Soft Solution BD · Dhaka, Bangladesh",
+      "points": [
+        "Developed software solutions across the full stack for multiple clients",
+        "Contributed to product development cycles and technical documentation",
+        "Collaborated with cross-functional teams on project delivery"
+      ],
+      "tags": ["Full Stack", "C#", "SQL"]
+    },
+    {
+      "period": "January 2019 – March 2020",
+      "role": "Internship",
+      "company": "N.R. Group Corporate Office · Dhaka, Bangladesh",
+      "points": [
+        "Supported IT operations and system maintenance tasks",
+        "Assisted with data management, reporting, and system monitoring"
+      ],
+      "tags": ["IT Operations", "Data Management"]
+    },
+    {
+      "period": "June 2014 – December 2018",
+      "role": "Teacher",
+      "company": "EdCam Education · Gulshan, Dhaka, Bangladesh",
+      "points": [
+        "Taught Mathematics and ICT to O- and A-level students",
+        "Prepared question papers and reviewed answer scripts with constructive feedback",
+        "Mentored students and tracked academic progress through regular assessments"
+      ],
+      "tags": ["Mathematics", "ICT", "Mentoring"]
+    }
+  ],
+  "education": [
+    {
+      "icon": "cap",
+      "degree": "Bachelor of Science in Computer Science & Engineering",
+      "school": "Dhaka International University (DIU) · Dhaka, Bangladesh",
+      "period": "2015 – 2018",
+      "cgpa": "CGPA: 3.70 / 4.00",
+      "thesis": "Thesis: Department Management System — A Smart Approach to University Administration"
+    },
+    {
+      "icon": "book",
+      "degree": "Diploma in Computer Engineering",
+      "school": "CCN Polytechnic Institute · Bangladesh",
+      "period": "2009 – 2014",
+      "cgpa": "CGPA: 3.45 / 4.00",
+      "thesis": ""
+    },
+    {
+      "icon": "home",
+      "degree": "Secondary School Certificate (SSC) — Science Group",
+      "school": "Elahabad High School · Comilla, Bangladesh",
+      "period": "2007 – 2009",
+      "cgpa": "CGPA: 3.94 / 5.00",
+      "thesis": ""
+    }
+  ],
+  "training": [
+    {
+      "year": "2024",
+      "title": "Data Science & Machine Learning with Python & R",
+      "org": "Data Solution 360 · Dhaka, Bangladesh · ID: DS3602503MNHB08",
+      "period": "September 2024 – February 2025",
+      "points": [
+        "Statistical analysis, EDA, data cleaning and visualisation in Python and R",
+        "Applied supervised and unsupervised machine learning techniques",
+        "Completed end-to-end data science and machine learning projects"
+      ],
+      "cert_url": "https://drive.google.com/file/d/1ms-N6caIActhlZ9olhAQGTN2IDNznRX3/view?usp=sharing"
+    },
+    {
+      "year": "2025",
+      "title": "Deep Learning & Generative AI with Python",
+      "org": "AI Quest Intelligence & Study Mart · Dhaka, Bangladesh",
+      "period": "February 2025 – October 2025",
+      "points": [
+        "Deep Learning architectures & optimisation · Advanced NLP with Transformers",
+        "Generative AI & LLM optimisation · Computer Vision with GANs & Object Detection",
+        "LLM Enhancement & Alignment"
+      ],
+      "cert_url": ""
+    }
+  ],
+  "posts": [
+    {
+      "id": "seed-blood-donation",
+      "category": "personal",
+      "title": "Blood Donation",
+      "body": "Donating blood is a simple act of kindness that can save lives. One small contribution can make a world of difference for someone in need.",
+      "cover_url": "",
+      "author_name": "Nyem Hasan",
+      "is_guest": false,
+      "published": true,
+      "created_at": "2025-01-01T12:00:00Z"
+    },
+    {
+      "id": "seed-small-moments",
+      "category": "personal",
+      "title": "Small Moments",
+      "body": "We sometimes miss the simple beauty of small moments in our everyday lives. Understanding ourselves means accepting our strengths and weaknesses — that makes us who we are.\n\nNever waste your food. Never hurt anyone.",
+      "cover_url": "",
+      "author_name": "Nyem Hasan",
+      "is_guest": false,
+      "published": true,
+      "created_at": "2025-01-02T12:00:00Z"
+    }
+  ]
+}

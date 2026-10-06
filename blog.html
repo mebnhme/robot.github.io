@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — Md Nyem Hasan Bhuiyan</title>
+<meta name="description" content="Technology notes and personal stories by Md Nyem Hasan Bhuiyan."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="index.html">Nyem Hasan</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="index.html#publications">Publications</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <button class="hamburger" id="menuBtn" aria-label="Menu" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page blog-page">
+  <div id="listView">
+    <div class="sec-label">Thoughts &amp; Writing</div>
+    <div class="sec-title">Blog</div>
+    <div class="filter-tabs" id="filters">
+      <button data-cat="all" class="active">All</button>
+      <button data-cat="tech">Technology</button>
+      <button data-cat="personal">Personal</button>
+    </div>
+    <div class="blog-grid" id="postGrid"><div class="loading">Loading…</div></div>
+
+    <div class="guest-box" id="guestBox">
+      <h2>Write a technology post</h2>
+      <p class="intro">Have something useful to share about machine learning, software or technology? Send it here. Every post is read and approved before it appears on the blog.</p>
+      <form class="cform" id="guestForm" novalidate>
+        <label class="flabel" for="gName">Your name</label>
+        <input id="gName" type="text" maxlength="80" autocomplete="name" required/>
+        <label class="flabel" for="gEmail">Email (optional, never shown publicly)</label>
+        <input id="gEmail" type="email" maxlength="200" autocomplete="email"/>
+        <label class="flabel" for="gTitle">Title</label>
+        <input id="gTitle" type="text" maxlength="200" required/>
+        <label class="flabel" for="gBody">Text</label>
+        <textarea id="gBody" maxlength="20000" style="height:200px" required></textarea>
+        <div class="form-note">Plain text. Blank line starts a new paragraph. Use ## for a heading and - for list items. Links in the text are shown as links.</div>
+        <input class="hp" type="text" id="gWebsite" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+        <button class="btn-send" type="submit" id="gSend">Send for approval</button>
+        <div class="form-status" id="gStatus" role="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <article class="post-view" id="postView" hidden></article>
+</main>
+
+<footer>
+  <div class="page">
+    <div class="footer-inner">
+      <span class="footer-name">Md Nyem Hasan Bhuiyan</span>
+      <span class="footer-note" id="year"></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/blog.js"></script>
+</body>
+</html>
