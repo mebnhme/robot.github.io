@@ -130,12 +130,12 @@
       label: 'Publications',
       kind: 'list',
       addAt: 'end',
-      help: 'Numbers are added automatically from the order of this list. Use the arrows to reorder. When a paper gets a DOI, fill the DOI field and the Submission Proof link is replaced by the DOI link.',
+      help: 'Numbers are added automatically from the order of this list. Use the arrows to reorder. Every link you fill in (DOI, Journal, Submission Proof) is shown under the paper.',
       title: function (i) {
         return (i.title || '') + '  [' + (i.status || '') + ']';
       },
       blank: function () {
-        return { title: '', authors: '', venue: '', index_tag: '', publisher: '', doi: '', proof_url: '', status: 'submitted' };
+        return { title: '', authors: '', venue: '', index_tag: '', publisher: '', doi: '', journal_url: '', proof_url: '', status: 'submitted' };
       },
       fields: [
         { k: 'title', l: 'Title', t: 'textarea', rows: 2 },
@@ -145,7 +145,8 @@
         { k: 'index_tag', l: 'Index badge (optional)', t: 'text', hint: 'For example: SCOPUS, IEEE' },
         { k: 'publisher', l: 'Publisher (optional)', t: 'text' },
         { k: 'doi', l: 'DOI (optional)', t: 'text', hint: 'Only the DOI, for example 10.1109/XXXX' },
-        { k: 'proof_url', l: 'Submission proof link (optional)', t: 'text', hint: 'Used when there is no DOI yet.' }
+        { k: 'journal_url', l: 'Journal link (optional)', t: 'text', hint: 'Link to the paper or journal page. Shown as "Journal".' },
+        { k: 'proof_url', l: 'Submission proof link (optional)', t: 'text', hint: 'Shown as "Submission Proof".' }
       ]
     },
     skills: {

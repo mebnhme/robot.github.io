@@ -171,13 +171,18 @@
         var tag = p.index_tag ? ' <span class="idx">' + E(p.index_tag) + '</span>' : '';
         var pub = p.publisher ? ' · Publisher: ' + E(p.publisher) : '';
         var venue = p.venue || tag || pub ? '<div class="pub-venue">' + E(p.venue) + tag + pub + '</div>' : '';
-        var link = '';
+        var links = [];
         if (p.doi) {
           var doi = String(p.doi).replace(/^https?:\/\/(dx\.)?doi\.org\//i, '');
-          link = '<a href="https://doi.org/' + E(doi) + '" class="pub-doi" target="_blank" rel="noopener">DOI: ' + E(doi) + ' ↗</a>';
-        } else if (ext(p.proof_url)) {
-          link = '<a href="' + E(p.proof_url) + '" class="pub-doi" target="_blank" rel="noopener">Submission Proof ↗</a>';
+          links.push('<a href="https://doi.org/' + E(doi) + '" class="pub-doi" target="_blank" rel="noopener">DOI: ' + E(doi) + ' ↗</a>');
         }
+        if (ext(p.journal_url)) {
+          links.push('<a href="' + E(p.journal_url) + '" class="pub-doi" target="_blank" rel="noopener">Journal ↗</a>');
+        }
+        if (ext(p.proof_url)) {
+          links.push('<a href="' + E(p.proof_url) + '" class="pub-doi" target="_blank" rel="noopener">Submission Proof ↗</a>');
+        }
+        var link = links.length ? '<div style="display:flex;flex-wrap:wrap;gap:4px 16px;">' + links.join('') + '</div>' : '';
         var st = STATUS[p.status] ? p.status : 'submitted';
         return (
           '<div class="pub-card fade-up"><div class="pub-num">' + (i + 1) + '</div><div>' +
